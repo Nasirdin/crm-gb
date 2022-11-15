@@ -1,20 +1,24 @@
+// global CSS
 @import "grandbazar";
+// Style
 @import "header";
 .wrapper {
   display: flex;
   justify-content: flex-start;
 }
 .navigation {
-  width: 340px;
+  // width: 340px;
   height: 100vh;
   background-color: $dark-color;
 }
 .global-content {
-  width: calc(100% - 340px);
+  // width: calc(100% - 340px);
+  width: 100%;
   padding: 30px;
 }
+
 .header {
-  padding: 24px 40px;
+  padding: 8px 40px 0;
   border-radius: 8px;
   background-color: $white-color;
   &__nav {
@@ -26,6 +30,7 @@
     &__item {
       margin-right: 40px;
       position: relative;
+      margin-bottom: 8px;
       cursor: pointer;
       &::after {
         display: none;
@@ -47,6 +52,9 @@
           background-color: $yellow-color;
         }
       }
+      &:nth-child(2) {
+        margin-right: 16px;
+      }
     }
     &__item.active {
       &::before {
@@ -59,7 +67,7 @@
       }
     }
     &__item_more {
-      margin-right: 64px;
+      padding: 16px 40px 24px 24px;
       position: relative;
       &:last-child {
         margin-right: 0;
@@ -70,15 +78,88 @@
         background: url(../icons/arrowToDown.svg) center/cover;
         width: 10px;
         height: 6px;
-        right: -19px;
-        top: 50%;
+        right: 21px;
+        top: 44%;
         transform: translateY(-50%);
+      }
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        width: calc(100% - 32px);
+        height: 1px;
+        content: "";
+        background-color: $lightGrey-color-three;
+        display: none;
+      }
+      &:hover {
+        box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.15);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        .second-nav {
+          display: block;
+        }
+        &::before {
+          display: block;
+        }
       }
     }
     &__link {
       font-weight: 700;
       font-size: 16px;
       line-height: 20px;
+    }
+    &__second-items {
+      position: absolute;
+      border-radius: 8px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      top: 45px;
+      left: 0;
+      background-color: $white-color;
+      margin: 15px 0 0 0;
+      padding: 16px 0px;
+    }
+    &__second-items_one {
+      min-width: 203px;
+      box-shadow: 0px 5px 20px rgba(186, 186, 186, 0.15);
+    }
+    &__second-items_two {
+      min-width: 164px;
+      border-top-right-radius: 8px;
+    }
+    &__second-items_three {
+      border-top-right-radius: 8px;
+      min-width: 160px;
+    }
+    .second-nav {
+      display: none;
+      &__item {
+        padding: 6px 24px;
+        margin-bottom: 7px;
+        position: relative;
+        transition: 0.4s;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          background: rgba(255, 220, 0, 0.05);
+          &::before {
+            display: block;
+          }
+        }
+        &::before {
+          background-color: $yellow-color;
+          height: 100%;
+          width: 2px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: "";
+          display: none;
+          transition: 0.4s;
+        }
+      }
     }
   }
 }
