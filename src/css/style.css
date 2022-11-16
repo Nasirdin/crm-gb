@@ -176,12 +176,13 @@ h6 {
 }
 
 .navigation {
+  width: 340px;
   height: 100vh;
   background-color: #161616;
 }
 
 .global-content {
-  width: 100%;
+  width: calc(100% - 340px);
   padding: 30px;
 }
 
@@ -298,6 +299,7 @@ h6 {
   background-color: #fff;
   margin: 15px 0 0 0;
   padding: 16px 0px;
+  z-index: 9;
 }
 .header .nav__second-items_one {
   min-width: 203px;
@@ -342,4 +344,63 @@ h6 {
   display: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+.second-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.second-header__title {
+  margin-right: 30px;
+}
+.second-header__btns {
+  width: 134px;
+  height: 50px;
+  background-color: #ffdc00;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 20px;
+  margin-right: 20px;
+}
+.second-header__btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 700;
+}
+.second-header__btn:first-child {
+  padding-right: 12px;
+  border-right: 1px solid #161616;
+}
+.second-header__btn:last-child {
+  padding-left: 13px;
+}
+.second-header__select {
+  padding: 15px 44px 15px 20px;
+  border: 0.5px solid #dddcdc;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-right: 12px;
+}
+.second-header__text {
+  position: relative;
+  font-weight: 700;
+}
+.second-header__text::after {
+  content: url(../icons/arrowToDown.svg);
+  position: absolute;
+  right: -18px;
+  z-index: 0;
+}
+.second-header__second-items {
+  display: none;
 }
