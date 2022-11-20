@@ -34,16 +34,26 @@ h6 {
   font-weight: 700;
 }
 
+.new {
+  background-color: #ffdc00;
+}
+
+.in-work {
+  background-color: #007BFB;
+}
+
+.failed {
+  background-color: #FF0C0C;
+}
+
+.success {
+  background-color: #00D359;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.content {
-  border-radius: 20px;
-  background-color: #fff;
-  padding: 30px;
 }
 
 .title-h1 {
@@ -340,6 +350,9 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid #dddcdc;
 }
 .second-header__title {
   margin-right: 30px;
@@ -380,17 +393,17 @@ h6 {
   position: relative;
   cursor: pointer;
 }
-.second-header__btn:last-child:hover {
+.second-header__btn.active {
   padding-left: 20px;
   background: #efcf02;
   margin-left: -7px;
   z-index: 9;
 }
-.second-header__btn:last-child:hover .second-header__btn-img {
+.second-header__btn.active .second-header__btn-img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.second-header__btn:last-child:hover .second-header__btn-wrapper {
+.second-header__btn.active .second-header__btn-wrapper {
   display: block;
 }
 .second-header__btn-wrapper, .second-header__select-wrapper {
@@ -449,14 +462,15 @@ h6 {
   background-color: #fff;
   margin-right: 12px;
   position: relative;
+  cursor: pointer;
 }
-.second-header__select:hover .second-header__select-wrapper {
+.second-header__select.active .second-header__select-wrapper {
   display: block;
 }
-.second-header__select:hover .second-header__second-items {
+.second-header__select.active .second-header__second-items {
   width: 230px;
 }
-.second-header__select:hover .second-header__text::after {
+.second-header__select.active .second-header__text::after {
   content: url(../icons/arrowToDownYellow.svg);
 }
 .second-header__text {
@@ -516,12 +530,298 @@ h6 {
 }
 
 .navigation {
-  width: 340px;
   height: 100vh;
   background-color: #161616;
 }
 
 .global-content {
-  width: calc(100% - 340px);
+  width: 100%;
   padding: 30px;
+}
+
+.content__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-end center;
+      -ms-flex-pack: flex-end center;
+          justify-content: flex-end center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.content .content-header__items {
+  padding: 12px 5px;
+  border-radius: 6px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content .content-header__items:first-child {
+  margin-right: 30px;
+}
+.content .content-header__item {
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.content .content-header__link {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.content .content-header__link.active {
+  position: relative;
+}
+.content .content-header__link.active::after {
+  background: #ffdc00;
+  border-radius: 8px;
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+.content .content-header__span {
+  width: 24px;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffdc00;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 8px;
+}
+.content .content-header .second-item {
+  border-right: 1px solid #000;
+}
+.content .content-header .second-item:first-child {
+  padding-right: 5px;
+  border: none;
+}
+.content .content-header .second-item:last-child {
+  border: none;
+}
+.content .content-header__text {
+  font-weight: 500;
+}
+.content .kanban {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.content .kanban__item {
+  width: 280px;
+  margin-right: 20px;
+}
+.content .kanban__item:last-child {
+  margin-right: 0;
+}
+.content .kanban__header {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 0.5px solid #dddcdc;
+}
+.content .kanban__color-span {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  height: calc(100% + 2px);
+  width: 7px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.content .kanban__title {
+  font-size: 14px;
+}
+.content .kanban__content {
+  border: 1px dashed #c4c4c4;
+  border-top: none;
+  padding: 20px 8px;
+}
+.content .kanban__all-money {
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.content .kanban__currency {
+  margin-left: 5px;
+}
+.content .kanban__create-btn {
+  background-color: #fff;
+  border: none;
+  border: 0.5px solid #dddcdc;
+  padding: 9px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.content .kanban__btn-plus {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  position: relative;
+  display: block;
+}
+.content .kanban__btn-plus::after, .content .kanban__btn-plus::before {
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  border-radius: 1px;
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.content .kanban__btn-plus::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.content .kanban .deal {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 0.5px solid #dddcdc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 10px 15px 10px 20px;
+  position: relative;
+}
+.content .kanban .deal::before {
+  width: 4px;
+  height: calc(100% - 20px);
+  border-radius: 6px;
+  left: 0;
+  top: 10px;
+  content: "";
+  position: absolute;
+}
+.content .kanban .deal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.content .kanban .deal__title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.content .kanban .deal__price {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.content .kanban .deal__client, .content .kanban .deal__company {
+  color: #007BFB;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.content .kanban .deal__company {
+  margin-bottom: 10px;
+}
+.content .kanban .deal__date {
+  margin-bottom: 40px;
+}
+.content .kanban .deal__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content .kanban .deal__info li {
+  line-height: 0px;
+}
+.content .kanban .deal__amount {
+  width: 20px;
+  height: 20px;
+  background-color: #ffdc00;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 14px;
+  line-height: 16px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content .kanban .deal__tel {
+  margin-bottom: 18px;
+}
+.content .kanban__new .deal::before {
+  background-color: #ffdc00;
+}
+.content .kanban__in-work .deal::before {
+  background-color: #007BFB;
+}
+.content .kanban__failed .deal::before {
+  background-color: #FF0C0C;
+}
+.content .kanban__success .deal::before {
+  background-color: #00D359;
 }

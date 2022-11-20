@@ -166,6 +166,26 @@ h6 {
     width: 100%;
   }
 }
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.navigation {
+  width: 340px;
+  height: 100vh;
+  background-color: #161616;
+}
+
+.global-content {
+  width: calc(100% - 340px);
+  padding: 30px;
+}
+
 .header {
   padding: 8px 40px 0;
   border-radius: 8px;
@@ -380,17 +400,17 @@ h6 {
   position: relative;
   cursor: pointer;
 }
-.second-header__btn:last-child:hover {
+.second-header__btn.active {
   padding-left: 20px;
   background: #efcf02;
   margin-left: -7px;
   z-index: 9;
 }
-.second-header__btn:last-child:hover .second-header__btn-img {
+.second-header__btn.active .second-header__btn-img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.second-header__btn:last-child:hover .second-header__btn-wrapper {
+.second-header__btn.active .second-header__btn-wrapper {
   display: block;
 }
 .second-header__btn-wrapper, .second-header__select-wrapper {
@@ -449,14 +469,15 @@ h6 {
   background-color: #fff;
   margin-right: 12px;
   position: relative;
+  cursor: pointer;
 }
-.second-header__select:hover .second-header__select-wrapper {
+.second-header__select.active .second-header__select-wrapper {
   display: block;
 }
-.second-header__select:hover .second-header__second-items {
+.second-header__select.active .second-header__second-items {
   width: 230px;
 }
-.second-header__select:hover .second-header__text::after {
+.second-header__select.active .second-header__text::after {
   content: url(../icons/arrowToDownYellow.svg);
 }
 .second-header__text {
@@ -504,24 +525,4 @@ h6 {
   outline: none;
   padding: 15px 20px;
   cursor: pointer;
-}
-
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.navigation {
-  width: 340px;
-  height: 100vh;
-  background-color: #161616;
-}
-
-.global-content {
-  width: calc(100% - 340px);
-  padding: 30px;
 }

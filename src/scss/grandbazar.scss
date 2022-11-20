@@ -12,8 +12,12 @@ $yellow-color: #ffdc00;
 $lightGrey-color: #f5f5f5;
 $lightGrey-color-two: #f9f9f9;
 $lightGrey-color-three: #dddcdc;
+$lightGrey-color-four: #c4c4c4;
 $grey-color: #99a2ad;
 $white-color: #fff;
+$inWork-color: #007BFB;
+$failed-color: #FF0C0C;
+$success-color: #00D359;
 
 body {
   font-family: "Manrope", sans-serif;
@@ -40,16 +44,23 @@ h6 {
   font-weight: 700;
 }
 
+.new{
+  background-color: $yellow-color;
+}
+.in-work{
+  background-color: $inWork-color;
+}
+.failed{
+  background-color: $failed-color;
+}
+.success{
+  background-color: $success-color;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.content {
-  border-radius: 20px;
-  background-color: $white-color;
-  padding: 30px;
 }
 
 .title-h1 {
