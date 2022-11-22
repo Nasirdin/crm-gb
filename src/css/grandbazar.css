@@ -34,26 +34,16 @@ h6 {
   font-weight: 700;
 }
 
-.new {
-  background-color: #ffdc00;
-}
-
-.in-work {
-  background-color: #007BFB;
-}
-
-.failed {
-  background-color: #FF0C0C;
-}
-
-.success {
-  background-color: #00D359;
-}
-
 .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.content {
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 30px;
 }
 
 .title-h1 {
@@ -168,6 +158,14 @@ h6 {
     font-size: 32px;
   }
   .subtitle {
+    font-size: 12px;
+  }
+}
+@media (max-width: 394px) {
+  .btn {
+    width: 100%;
+  }
+}
     font-size: 12px;
   }
 }

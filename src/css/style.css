@@ -527,16 +527,20 @@ h6 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .navigation {
+  width: 340px;
   height: 100vh;
   background-color: #161616;
 }
 
 .global-content {
-  width: 100%;
+  width: calc(100% - 340px);
   padding: 30px;
+  padding-bottom: 0;
 }
 
 .content__header {
@@ -640,6 +644,7 @@ h6 {
 }
 .content .kanban__item {
   width: 280px;
+  min-width: 280px;
   margin-right: 20px;
 }
 .content .kanban__item:last-child {
@@ -664,10 +669,82 @@ h6 {
 .content .kanban__title {
   font-size: 14px;
 }
+.content .kanban .create-deal {
+  padding: 15px;
+  border: 1px solid #dddcdc;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  display: none;
+}
+.content .kanban .create-deal__titles {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+.content .kanban .create-deal__label {
+  width: 234px;
+  margin-bottom: 15px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 0.5px solid #dddcdc;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content .kanban .create-deal__input {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.content .kanban .create-deal__input::-webkit-inner-spin-button, .content .kanban .create-deal__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.content .kanban .create-deal__icon-one {
+  padding-right: 13px;
+  margin-right: 16px;
+  border-right: 1px solid #dddcdc;
+}
+.content .kanban .create-deal__btn {
+  padding: 10px 26px;
+  outline: none;
+  background-color: #ffdc00;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+.content .kanban .create-deal__btn_white {
+  background-color: #fff;
+}
+.content .kanban .create-deal.active {
+  display: block;
+}
 .content .kanban__content {
   border: 1px dashed #c4c4c4;
   border-top: none;
   padding: 20px 8px;
+  height: calc(100vh - 345px);
+  overflow: scroll;
+}
+.content .kanban__content::-webkit-scrollbar {
+  width: 0;
 }
 .content .kanban__all-money {
   text-align: center;
@@ -699,6 +776,11 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 30px;
+  cursor: pointer;
+}
+.content .kanban__create-btn.active {
+  background-color: #ffdc00;
+  border: 0.5px solid #ffdc00;
 }
 .content .kanban__btn-plus {
   width: 12px;
@@ -735,15 +817,19 @@ h6 {
           align-items: start;
   padding: 10px 15px 10px 20px;
   position: relative;
+  margin-bottom: 30px;
 }
 .content .kanban .deal::before {
   width: 4px;
   height: calc(100% - 20px);
   border-radius: 6px;
-  left: 0;
+  left: -1px;
   top: 10px;
   content: "";
   position: absolute;
+}
+.content .kanban .deal:last-child {
+  margin-bottom: 0;
 }
 .content .kanban .deal__content {
   display: -webkit-box;
@@ -775,6 +861,25 @@ h6 {
 }
 .content .kanban .deal__date {
   margin-bottom: 40px;
+}
+.content .kanban .deal__plus-btn {
+  border: none;
+  background: none;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  line-height: 20px;
+  cursor: pointer;
+}
+.content .kanban .deal__plus-btn img {
+  margin-right: 10px;
 }
 .content .kanban .deal__info {
   display: -webkit-box;
