@@ -7,18 +7,18 @@
   height: 100vh;
   overflow: hidden;
 }
+
 .navigation {
-  width: 340px;
+  // width: 340px;
   height: 100vh;
   background-color: $dark-color;
 }
 .global-content {
   width: calc(100% - 340px);
-  // width: 100%;
+  width: 100%;
   padding: 30px;
   padding-bottom: 0;
 }
-
 .content {
   &__header {
     display: flex;
@@ -134,7 +134,6 @@
         margin-bottom: 4px;
       }
       &__label {
-        width: 234px;
         margin-bottom: 15px;
         display: block;
         padding: 10px 15px;
@@ -163,6 +162,9 @@
         margin-right: 16px;
         border-right: 1px solid $lightGrey-color-three;
       }
+      &__icon {
+        cursor: pointer;
+      }
       &__btn {
         padding: 10px 26px;
         outline: none;
@@ -176,6 +178,78 @@
       }
       &__btn_white {
         background-color: $white-color;
+      }
+      &__sum {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        label {
+          max-width: 167px;
+          margin-right: 6px;
+          margin-bottom: 0;
+        }
+      }
+      &__select {
+        position: relative;
+      }
+      &__currency {
+        padding: 10px 15px;
+        width: 61px;
+        padding-right: 36px;
+        border-radius: 6px;
+        line-height: 20px;
+        border: 0.5px solid $lightGrey-color-three;
+        position: relative;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        &::after {
+          content: url(../icons/arrowToDown.svg);
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      &__select-wrapper {
+        padding-top: 8px;
+        position: absolute;
+        width: 100%;
+        display: none;
+      }
+      &__select-wrapper.active {
+        display: block;
+      }
+      &__select-items {
+        padding: 8px 0;
+        width: 100%;
+        background-color: $white-color;
+        border-radius: 6px;
+        box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+      }
+      &__select-item {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &__select-item.active {
+        background: rgba(255, 220, 0, 0.05);
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          content: "";
+          background-color: $yellow-color;
+        }
       }
     }
     .create-deal.active {
