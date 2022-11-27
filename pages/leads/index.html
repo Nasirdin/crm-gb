@@ -72,6 +72,213 @@
             <button class="second-header__search-btn"><img src="./src/icons//search.svg" alt="search-icon" /></button>
           </form>
         </div>
+        <div class="content">
+          <div class="content__header content-header">
+            <ul class="content-header__items">
+              <li class="content-header__item"><a href="#" class="content-header__link active">Канбан</a></li>
+              <li class="content-header__item"><a href="#" class="content-header__link">Список</a></li>
+              <li class="content-header__item"><a href="#" class="content-header__link">Календарь</a></li>
+            </ul>
+            <ul class="content-header__items">
+              <li class="content-header__item second-item"><span class="content-header__span-text">Мои:</span></li>
+              <li class="content-header__item second-item">
+                <span class="content-header__span">0</span>
+                <p class="content-header__text">Без дел</p>
+              </li>
+              <li class="content-header__item second-item">
+                <span class="content-header__span">0</span>
+                <p class="content-header__text">На сегодня</p>
+              </li>
+              <li class="content-header__item second-item">
+                <span class="content-header__span">0</span>
+                <p class="content-header__text">Просрочены</p>
+              </li>
+            </ul>
+          </div>
+          <!-- KANBAN - GRID -->
+
+          <ul class="kanban">
+            <li class="kanban__item kanban__new">
+              <div class="kanban__header">
+                <span class="kanban__color-span new"></span>
+                <h3 class="kanban__title">Новая</h3>
+              </div>
+              <div class="kanban__content">
+                <p class="kanban__all-money">
+                  <span id="deal-all-money-new">0</span><span class="kanban__currency">₽</span>
+                </p>
+                <button class="kanban__create-btn" id="create-deal-new-btn">
+                  <span class="kanban__btn-plus"></span>Быстрая сделка
+                </button>
+                <form class="kanban__create-deal create-deal" id="create-deal-new">
+                  <p class="create-deal__titles">Название</p>
+                  <label class="create-deal__label"
+                    ><input class="create-deal__input" type="text" placeholder="Сделка №"
+                  /></label>
+                  <p class="create-deal__titles">Сумма и валюта</p>
+                  <div class="create-deal__sum">
+                    <label class="create-deal__label"
+                      ><input class="create-deal__input" id="deal-price" type="number" placeholder="0.00"
+                    /></label>
+                    <div class="create-deal__select">
+                      <p class="create-deal__currency">₽</p>
+                      <div class="create-deal__select-wrapper">
+                        <ul class="create-deal__select-items">
+                          <li class="create-deal__select-item rub active">₽</li>
+                          <li class="create-deal__select-item usd">$</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="create-deal__titles">Клиент</p>
+                  <label class="create-deal__label">
+                    <img class="create-deal__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                    <input class="create-deal__input" id="deal-client" type="text" placeholder="Имя, телефон" />
+                    <img class="create-deal__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                  </label>
+                  <button class="create-deal__new-client">
+                    <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участника
+                  </button>
+                  <p class="create-deal__titles">Клиент</p>
+                  <label class="create-deal__label">
+                    <img class="create-deal__icon-one" src="./src/icons/house-icon.svg" alt="icon" />
+                    <input class="create-deal__input" id="deal-company" type="text" placeholder="Название компании" />
+                    <img class="create-deal__icon" id="deal-company-btn" src="./src/icons/search.svg" alt="icon" />
+                  </label>
+                  <div class="create-deal__btns">
+                    <button class="create-deal__btn" id="deal-create">Создать</button>
+                    <button class="create-deal__btn create-deal__btn_white" id="deal-cancel">Отменить</button>
+                  </div>
+                </form>
+                <ul class="kanban__deals deals">
+                  <li class="deals__deal deal">
+                    <div class="deal__content">
+                      <h3 class="deal__title">Принтеры</h3>
+                      <div class="deal__sum-block">
+                        <p class="deal__price deal__price_new">150000</p>
+                        <span class="deal__currency-simbol">₽</span>
+                      </div>
+                      <a class="deal__client">Вадим Еланский</a>
+                      <a class="deal__company">ВТК МСК</a>
+                      <p class="deal__date">4 ноября</p>
+
+                      <button class="deal__plus-btn"><img src="./src/icons/plus.svg" alt="plus-img" />Дело</button>
+                    </div>
+                    <ul class="deal__info">
+                      <li class="deal__amount">0</li>
+                      <li class="deal__tel"><img class="deal__icon" src="./src/icons/tel.svg" alt="tel-icon" /></li>
+                      <li class="deal__message">
+                        <img class="deal__icon" src="./src//icons/message.svg" alt="message-icon" />
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="kanban__item kanban__in-work">
+              <div class="kanban__header">
+                <span class="kanban__color-span in-work"></span>
+                <h3 class="kanban__title">В работе</h3>
+              </div>
+              <div class="kanban__content">
+                <p class="kanban__all-money">
+                  <span id="deal-all-money-in-work">0</span><span class="kanban__currency">₽</span>
+                </p>
+                <button class="kanban__create-btn big-plus" id="create-deal-success-btn">
+                  <span class="kanban__btn-plus"></span>
+                </button>
+              </div>
+            </li>
+            <li class="kanban__item kanban__failed">
+              <div class="kanban__header">
+                <span class="kanban__color-span failed"></span>
+                <h3 class="kanban__title">Сделка провалена</h3>
+              </div>
+              <div class="kanban__content">
+                <p class="kanban__all-money">
+                  <span id="deal-all-money-failed">0</span><span class="kanban__currency">₽</span>
+                </p>
+                <button class="kanban__create-btn big-plus" id="create-deal-failed-btn">
+                  <span class="kanban__btn-plus"></span>
+                </button>
+                <form class="kanban__create-deal create-deal" id="create-deal-failed">
+                  <p class="create-deal__titles">Название</p>
+                  <label class="create-deal__label"
+                    ><input class="create-deal__input" type="text" placeholder="Сделка №"
+                  /></label>
+                  <p class="create-deal__titles">Сумма и валюта</p>
+                  <div class="create-deal__sum">
+                    <label class="create-deal__label"
+                      ><input class="create-deal__input" id="deal-price" type="number" placeholder="0.00"
+                    /></label>
+                    <div class="create-deal__select">
+                      <p class="create-deal__currency">₽</p>
+                      <div class="create-deal__select-wrapper">
+                        <ul class="create-deal__select-items">
+                          <li class="create-deal__select-item rub active">₽</li>
+                          <li class="create-deal__select-item usd">$</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="create-deal__titles">Клиент</p>
+                  <label class="create-deal__label">
+                    <img class="create-deal__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                    <input class="create-deal__input" id="deal-client" type="text" placeholder="Имя, телефон" />
+                    <img class="create-deal__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                  </label>
+                  <p class="create-deal__titles">Клиент</p>
+                  <label class="create-deal__label">
+                    <img class="create-deal__icon-one" src="./src/icons/house-icon.svg" alt="icon" />
+                    <input class="create-deal__input" id="deal-company" type="text" placeholder="Название компании" />
+                    <img class="create-deal__icon" id="deal-company-btn" src="./src/icons/search.svg" alt="icon" />
+                  </label>
+                  <div class="create-deal__btns">
+                    <button class="create-deal__btn" id="deal-create">Создать</button>
+                    <button class="create-deal__btn create-deal__btn_white" id="deal-cancel">Отменить</button>
+                  </div>
+                </form>
+                <ul class="kanban__deals deals">
+                  <li class="deals__deal deal">
+                    <div class="deal__content">
+                      <h3 class="deal__title">Сканеры</h3>
+                      <div class="deal__sum-block">
+                        <p class="deal__price deal__price_failed">200000</p>
+                        <span class="deal__currency-simbol">₽</span>
+                      </div>
+                      <a class="deal__client">Вадим Еланский</a>
+                      <a class="deal__company">ВТК МСК</a>
+                      <p class="deal__date">4 ноября</p>
+                      <button class="deal__plus-btn"><img src="./src/icons/plus.svg" alt="plus-img" />Дело</button>
+                    </div>
+                    <ul class="deal__info">
+                      <li class="deal__amount">1</li>
+                      <li class="deal__tel"><img class="deal__icon" src="./src/icons/tel.svg" alt="tel-icon" /></li>
+                      <li class="deal__message">
+                        <img class="deal__icon" src="./src//icons/message.svg" alt="message-icon" />
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="kanban__item kanban__success">
+              <div class="kanban__header">
+                <span class="kanban__color-span success"></span>
+                <h3 class="kanban__title">Успешная сделка</h3>
+              </div>
+              <div class="kanban__content">
+                <p class="kanban__all-money">
+                  <span id="deal-all-money-success">0</span><span class="kanban__currency">₽</span>
+                </p>
+                <button class="kanban__create-btn big-plus" id="create-deal-success-btn">
+                  <span class="kanban__btn-plus"></span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <script src="./src/js/main.js"></script>

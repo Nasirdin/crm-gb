@@ -538,6 +538,7 @@ h6 {
 }
 
 .navigation {
+  min-width: 340px;
   height: 100vh;
   background-color: #161616;
 }
@@ -547,6 +548,7 @@ h6 {
   width: 100%;
   padding: 30px;
   padding-bottom: 0;
+  position: relative;
 }
 
 .content__header {
@@ -688,9 +690,12 @@ h6 {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 4px;
+  margin-top: 15px;
+}
+.content .kanban .create-deal__titles:first-child {
+  margin-top: 0;
 }
 .content .kanban .create-deal__label {
-  margin-bottom: 15px;
   display: block;
   padding: 10px 15px;
   border-radius: 6px;
@@ -727,6 +732,9 @@ h6 {
 .content .kanban .create-deal__icon {
   cursor: pointer;
 }
+.content .kanban .create-deal__btns {
+  margin-top: 20px;
+}
 .content .kanban .create-deal__btn {
   padding: 10px 26px;
   outline: none;
@@ -751,7 +759,6 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 15px;
 }
 .content .kanban .create-deal__sum label {
   max-width: 167px;
@@ -821,6 +828,20 @@ h6 {
   content: "";
   background-color: #ffdc00;
 }
+.content .kanban .create-deal__new-client {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  color: #99a2ad;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 8px;
+}
+.content .kanban .create-deal__new-client img {
+  margin-right: 5px;
+}
 .content .kanban .create-deal.active {
   display: block;
 }
@@ -866,10 +887,6 @@ h6 {
   margin-bottom: 30px;
   cursor: pointer;
 }
-.content .kanban__create-btn.active {
-  background-color: #ffdc00;
-  border: 0.5px solid #ffdc00;
-}
 .content .kanban__btn-plus {
   width: 12px;
   height: 12px;
@@ -890,6 +907,25 @@ h6 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
+.content .kanban .big-plus {
+  background: none;
+  border: none;
+}
+.content .kanban .big-plus span {
+  width: 15px;
+  height: 15px;
+}
+.content .kanban__create-btn.active {
+  background-color: #ffdc00;
+  border: 0.5px solid #ffdc00;
+}
+.content .kanban__deals {
+  width: 100%;
+  height: 100%;
+}
+.content .kanban .drag-enter {
+  background-color: #dddcdc;
+}
 .content .kanban .deal {
   background-color: #fff;
   border-radius: 6px;
@@ -906,6 +942,8 @@ h6 {
   padding: 10px 15px 10px 20px;
   position: relative;
   margin-bottom: 30px;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .content .kanban .deal::before {
   width: 4px;
@@ -915,6 +953,9 @@ h6 {
   top: 10px;
   content: "";
   position: absolute;
+}
+.content .kanban .deal a {
+  cursor: pointer;
 }
 .content .kanban .deal:last-child {
   margin-bottom: 0;
@@ -932,11 +973,23 @@ h6 {
   font-size: 14px;
   margin-bottom: 10px;
 }
+.content .kanban .deal__sum-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
 .content .kanban .deal__price {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  margin-bottom: 10px;
+  margin-right: 3px;
 }
 .content .kanban .deal__client, .content .kanban .deal__company {
   color: #007BFB;
@@ -1017,4 +1070,204 @@ h6 {
 }
 .content .kanban__success .deal::before {
   background-color: #00D359;
+}
+
+.hide {
+  display: none !important;
+}
+
+.company-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 22, 22, 0.4);
+  top: 0;
+  left: 0;
+  padding: 30px 30px 50px;
+}
+.company-card__content {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+}
+.company-card__close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffdc00;
+}
+.company-card__close::after, .company-card__close::before {
+  content: "";
+  width: 14px;
+  height: 1px;
+  background-color: #161616;
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.company-card__close::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.company-card__close::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.company-card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 30px;
+}
+.company-card__title {
+  margin-right: 18px;
+}
+.company-card__btn {
+  border: none;
+  background: none;
+  outline: none;
+  margin-right: 9px;
+  cursor: pointer;
+}
+.company-card__second-header {
+  border-bottom: 1px solid #c4c4c4;
+}
+.company-card__white-btn {
+  background-color: #fff;
+  padding: 12px 20px;
+  width: 87px;
+  border-radius: 6px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  line-height: 20px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.company-card__white-btn::after {
+  border-radius: 8px;
+  height: 3px;
+  width: 47px;
+  background-color: #ffdc00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  content: "";
+}
+.company-card__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+  height: calc(100% - 93px);
+  position: relative;
+}
+.company-card__box {
+  width: 50%;
+  height: 100%;
+}
+.company-card__box:first-child {
+  border-right: 1px solid #c4c4c4;
+  padding-right: 30px;
+}
+.company-card__box:last-child {
+  padding-left: 30px;
+}
+.company-card .about,
+.company-card .history {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.company-card .about__header,
+.company-card .history__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+.company-card .about__title-block,
+.company-card .history__title-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.company-card .about__title,
+.company-card .history__title {
+  margin-right: 6px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.company-card .about__grey-text,
+.company-card .history__grey-text {
+  color: #99a2ad;
+  font-weight: 500;
+  line-height: 20px;
+}
+.company-card .about__text,
+.company-card .history__text {
+  margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  display: inline-block;
+}
+.company-card .about__annual-turnover,
+.company-card .history__annual-turnover {
+  line-height: 26px;
+  font-size: 22px;
+}
+.company-card .about__email,
+.company-card .history__email {
+  color: #007BFB;
+}
+.company-card .about__btn,
+.company-card .history__btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #99a2ad;
+  line-height: 20px;
+}
+.company-card .about__footer,
+.company-card .history__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

@@ -1,26 +1,3 @@
-// global CSS
-@import "grandbazar";
-@import "header";
-@import "kanban-grid";
-.wrapper {
-  display: flex;
-  justify-content: flex-start;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.navigation {
-  min-width: 340px;
-  height: 100vh;
-  background-color: $dark-color;
-}
-.global-content {
-  width: calc(100% - 340px);
-  width: 100%;
-  padding: 30px;
-  padding-bottom: 0;
-  position: relative;
-}
 .content {
   &__header {
     display: flex;
@@ -344,13 +321,6 @@
       background-color: $yellow-color;
       border: 0.5px solid $yellow-color;
     }
-    &__deals {
-      width: 100%;
-      height: 100%;
-    }
-    .drag-enter {
-      background-color: $lightGrey-color-three;
-    }
     .deal {
       background-color: $white-color;
       border-radius: 6px;
@@ -361,7 +331,6 @@
       padding: 10px 15px 10px 20px;
       position: relative;
       margin-bottom: 30px;
-      cursor: grab;
       &::before {
         width: 4px;
         height: calc(100% - 20px);
@@ -370,9 +339,6 @@
         top: 10px;
         content: "";
         position: absolute;
-      }
-      a {
-        cursor: pointer;
       }
       &:last-child {
         margin-bottom: 0;
@@ -476,169 +442,6 @@
           background-color: $success-color;
         }
       }
-    }
-  }
-}
-
-.hide {
-  display: none !important;
-}
-
-.company-card {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(22, 22, 22, 0.4);
-  top: 0;
-  left: 0;
-  padding: 30px 30px 50px;
-  &__content {
-    background-color: $lightGrey-color-two;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-  }
-  &__close {
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $yellow-color;
-    &::after,
-    &::before {
-      content: "";
-      width: 14px;
-      height: 1px;
-      background-color: $dark-color;
-      border-radius: 1px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-    }
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-    &::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-  }
-  &__header {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-  }
-  &__title {
-    margin-right: 18px;
-  }
-  &__btn {
-    border: none;
-    background: none;
-    outline: none;
-    margin-right: 9px;
-    cursor: pointer;
-  }
-  &__second-header {
-    border-bottom: 1px solid $lightGrey-color-four;
-  }
-  &__white-btn {
-    background-color: $white-color;
-    padding: 12px 20px;
-    width: 87px;
-    border-radius: 6px;
-    font-weight: 700;
-    border: none;
-    outline: none;
-    line-height: 20px;
-    position: relative;
-    margin-bottom: 12px;
-    &::after {
-      border-radius: 8px;
-      height: 3px;
-      width: 47px;
-      background-color: $yellow-color;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      content: "";
-    }
-  }
-  &__block {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    height: calc(100% - 93px);
-    position: relative;
-  }
-  &__box {
-    width: 50%;
-    height: 100%;
-    &:first-child {
-      border-right: 1px solid $lightGrey-color-four;
-      padding-right: 30px;
-    }
-    &:last-child {
-      padding-left: 30px;
-    }
-  }
-  .about,
-  .history {
-    background-color: $white-color;
-    padding: 20px;
-    border-radius: 8px;
-    &__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid $lightGrey-color-four;
-      padding-bottom: 12px;
-      margin-bottom: 15px;
-    }
-    &__title-block {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    &__title {
-      margin-right: 6px;
-      font-size: 14px;
-      line-height: 20px;
-    }
-    &__grey-text {
-      color: $grey-color;
-      font-weight: 500;
-      line-height: 20px;
-    }
-    &__text {
-      margin-bottom: 15px;
-      font-weight: 500;
-      line-height: 20px;
-      display: inline-block;
-    }
-    &__annual-turnover {
-      line-height: 26px;
-      font-size: 22px;
-    }
-    &__email {
-      color: $inWork-color;
-    }
-    &__btn {
-      background: none;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: $grey-color;
-      line-height: 20px;
-    }
-    &__footer {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
     }
   }
 }
