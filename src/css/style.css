@@ -1084,6 +1084,7 @@ h6 {
   top: 0;
   left: 0;
   padding: 30px 30px 50px;
+  display: block;
 }
 .company-card__content {
   background-color: #f9f9f9;
@@ -1094,6 +1095,7 @@ h6 {
   position: relative;
 }
 .company-card__close {
+  cursor: pointer;
   position: absolute;
   right: 30px;
   top: 30px;
@@ -1143,6 +1145,7 @@ h6 {
   border-bottom: 1px solid #c4c4c4;
 }
 .company-card__white-btn {
+  cursor: pointer;
   background-color: #fff;
   padding: 12px 20px;
   width: 87px;
@@ -1180,6 +1183,10 @@ h6 {
 .company-card__box {
   width: 50%;
   height: 100%;
+  overflow-y: scroll;
+}
+.company-card__box::-webkit-scrollbar {
+  width: 0;
 }
 .company-card__box:first-child {
   border-right: 1px solid #c4c4c4;
@@ -1258,6 +1265,7 @@ h6 {
   font-weight: 500;
   color: #99a2ad;
   line-height: 20px;
+  cursor: pointer;
 }
 .company-card .about__footer,
 .company-card .history__footer {
@@ -1270,4 +1278,134 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.company-card .edit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.company-card .edit-form__input-title {
+  margin-bottom: 4px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.company-card .edit-form__input {
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #c4c4c4;
+  width: 100%;
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+.company-card .edit-form__input::-webkit-input-placeholder {
+  font-weight: bold;
+  color: #c4c4c4;
+}
+.company-card .edit-form__input::-moz-placeholder {
+  font-weight: bold;
+  color: #c4c4c4;
+}
+.company-card .edit-form__input:-ms-input-placeholder {
+  font-weight: bold;
+  color: #c4c4c4;
+}
+.company-card .edit-form__input::-ms-input-placeholder {
+  font-weight: bold;
+  color: #c4c4c4;
+}
+.company-card .edit-form__input::placeholder {
+  font-weight: bold;
+  color: #c4c4c4;
+}
+.company-card .edit-form__option {
+  background-color: #c4c4c4;
+}
+.company-card .history {
+  position: relative;
+}
+.company-card .history__title {
+  margin-bottom: 30px;
+}
+.company-card .history__date {
+  padding: 5px 24px;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  display: inline-block;
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+}
+.company-card .history__items {
+  border-left: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+  padding: 45px 0 0 50px;
+  margin-left: 20px;
+}
+.company-card .history__item {
+  position: relative;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.company-card .history__item:last-child {
+  margin-bottom: 0;
+}
+.company-card .history__btn {
+  position: absolute;
+  left: -70px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 11px;
+  line-height: 10px;
+  border-radius: 6px;
+  border: 1px solid #c4c4c4;
+  background-color: #fff;
+}
+.company-card .history__btn:after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: #c4c4c4;
+  top: 50%;
+  right: -31px;
+}
+.company-card .history__img-icon {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+}
+.company-card .history__info-text {
+  color: #99a2ad;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 20px;
+}
+.company-card .history__info-date {
+  margin-left: 20px;
+}
+.company-card .history__text {
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 20px;
+}
+.company-card .history__link {
+  color: #007BFB;
+}
+
+.company-card.active {
+  display: block;
 }

@@ -304,14 +304,64 @@
                     </div>
                     <button class="about__btn">Изменить</button>
                   </div>
-                  <p class="about__grey-text">ID</p>
-                  <p class="about__text about__id">4</p>
-                  <p class="about__grey-text">Годовой оборот</p>
-                  <p class="about__text about__annual-turnover"><span class="about__sum">0</span></p>
-                  <p class="about__grey-text">Банковские реквизиты</p>
-                  <p class="about__text about__bank-details">Не заполнено</p>
-                  <p class="about__grey-text">ывкпыв@srfs.ru</p>
-                  <a class="about__text about__email" href="#">ывкпыв@srfs.ru</a>
+                  <form class="about__edit-form edit-form">
+                    <label class="edit-form__input-title" for="company-card-edit-name">Название компании</label>
+                    <input
+                      class="edit-form__input"
+                      id="company-card-edit-name"
+                      type="text"
+                      placeholder="Название компании"
+                    />
+                    <label class="edit-form__input-title" for="company-card-edit-type">Тип компании</label>
+                    <select
+                      class="edit-form__input edit-form__type-select"
+                      name="type-company"
+                      id="company-card-edit-type"
+                    >
+                      <option class="edit-form__option">Не выбран</option>
+                    </select>
+                    <label class="edit-form__input-title" for="company-card-edit-field-of-activity"
+                      >Сфера деятельности</label
+                    >
+                    <select
+                      class="edit-form__input edit-form__type-select"
+                      name="type-company"
+                      id="company-card-edit-field-of-activity"
+                    >
+                      <option class="edit-form__option">Не выбран</option>
+                    </select>
+                    <label class="edit-form__input-title" for="company-card-edit-phone">Телефон</label>
+                    <input class="edit-form__input" id="company-card-edit-phone" type="text" />
+                    <label class="edit-form__input-title" for="company-card-edit-site">Сайт</label>
+                    <input class="edit-form__input" id="company-card-edit-site" type="text" />
+                    <label class="edit-form__input-title" for="company-card-edit-contact"
+                      >Контакты, связанные с компанией</label
+                    >
+                    <input
+                      class="edit-form__input"
+                      id="company-card-edit-contact"
+                      type="text"
+                      placeholder="Имя, телефон или E-mail"
+                    />
+                    <label class="edit-form__input-title" for="company-card-edit-annual-turnover">Годовой оборот</label>
+                    <input class="edit-form__input" id="company-card-edit-annual-turnover" type="text" />
+                    <label class="edit-form__input-title" for="company-card-edit-bank-details"
+                      >Банковские реквизиты</label
+                    >
+                    <input class="edit-form__input" id="company-card-edit-bank-details" type="text" />
+                    <label class="edit-form__input-title" for="company-card-edit-email">E-mail</label>
+                    <input class="edit-form__input" id="company-card-edit-email" type="text" />
+                  </form>
+                  <div class="about__content">
+                    <p class="about__grey-text">ID</p>
+                    <p class="about__text about__id">4</p>
+                    <p class="about__grey-text">Годовой оборот</p>
+                    <p class="about__text about__annual-turnover"><span class="about__sum">0</span></p>
+                    <p class="about__grey-text">Банковские реквизиты</p>
+                    <p class="about__text about__bank-details">Не заполнено</p>
+                    <p class="about__grey-text">E-mail</p>
+                    <a class="about__text about__email" href="#">ывкпыв@srfs.ru</a>
+                  </div>
                   <div class="about__footer">
                     <button class="about__btn">Удалить раздел</button>
                   </div>
@@ -319,7 +369,28 @@
               </div>
               <div class="company-card__box">
                 <div class="company-card__history history">
-                  <h3 class="about__title">О компании</h3>
+                  <h3 class="history__title">История</h3>
+                  <span class="history__date">4 ноября</span>
+                  <ul class="history__items">
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -327,7 +398,6 @@
         </div>
       </div>
     </div>
-
     <script src="./src/js/main.js"></script>
   </body>
 </html>

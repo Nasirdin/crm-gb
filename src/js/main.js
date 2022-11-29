@@ -185,3 +185,20 @@ const dragAndDrop = () => {
 };
 
 dragAndDrop();
+
+// company card
+
+const openCompanyCard = () => {
+  const companyCardClose = document.querySelector(".company-card__close");
+  const companyCard = document.querySelector(".company-card");
+  const dealCompany = document.querySelectorAll(".deal__company");
+  dealCompany.forEach((dealCompanyLink) => {
+    dealCompanyLink.addEventListener("click", () => {
+      companyCard.classList.add("active");
+    });
+  });
+  companyCardClose.addEventListener("click", () => {
+    companyCard.classList.remove("active");
+  });
+};
+openCompanyCard();
