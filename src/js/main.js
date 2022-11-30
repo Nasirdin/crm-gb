@@ -111,14 +111,14 @@ changeCurrencyBtn.forEach((item) => {
 });
 
 const createDealSelectItem = document.querySelectorAll(".create-deal__select-item");
-const createDealCurrency = document.querySelectorAll(".create-deal__currency");
+// const createDealCurrency = document.querySelectorAll(".create-deal__currency");
 
 createDealSelectItem.forEach((item) => {
   item.addEventListener("click", () => {
     createDealSelectItem.forEach((e) => {
       e.classList.remove("active");
     });
-    createDealCurrency.forEach((el) => {
+    changeCurrencyBtn.forEach((el) => {
       el.innerText = `${item.innerText}`;
       createDealSelectItem.forEach((currencyItem) => {
         if (el.innerText == currencyItem.innerText) {
@@ -202,3 +202,33 @@ const openCompanyCard = () => {
   });
 };
 openCompanyCard();
+
+const openEditModal = () => {
+  const aboutEditBtn = document.getElementById("about-edit-btn");
+  const aboutCancelBtn = document.getElementById("about-cancel-btn");
+  const aboutDeleteBtn = document.getElementById("about-delete-btn");
+  const aboutContent = document.querySelector(".about__content");
+  const aboutEditForm = document.querySelector(".about__edit-form");
+  const allWindowBg = document.querySelector(".all-window-bg");
+  const about = document.querySelector(".about");
+
+  aboutEditBtn.addEventListener("click", () => {
+    aboutCancelBtn.classList.remove("no-active");
+    aboutEditBtn.classList.add("no-active");
+    aboutEditForm.classList.add("active");
+    aboutContent.classList.add("no-active");
+    allWindowBg.classList.add("active");
+    about.classList.add("active");
+    aboutDeleteBtn.classList.add("active");
+  });
+  aboutCancelBtn.addEventListener("click", () => {
+    aboutEditBtn.classList.remove("no-active");
+    aboutCancelBtn.classList.add("no-active");
+    aboutEditForm.classList.remove("active");
+    aboutContent.classList.remove("no-active");
+    allWindowBg.classList.remove("active");
+    about.classList.remove("active");
+    aboutDeleteBtn.classList.remove("active");
+  });
+};
+openEditModal();

@@ -15,9 +15,9 @@ $lightGrey-color-three: #dddcdc;
 $lightGrey-color-four: #c4c4c4;
 $grey-color: #99a2ad;
 $white-color: #fff;
-$inWork-color: #007BFB;
-$failed-color: #FF0C0C;
-$success-color: #00D359;
+$inWork-color: #007bfb;
+$failed-color: #ff0c0c;
+$success-color: #00d359;
 
 body {
   font-family: "Manrope", sans-serif;
@@ -44,16 +44,16 @@ h6 {
   font-weight: 700;
 }
 
-.new{
+.new {
   background-color: $yellow-color;
 }
-.in-work{
+.in-work {
   background-color: $inWork-color;
 }
-.failed{
+.failed {
   background-color: $failed-color;
 }
-.success{
+.success {
   background-color: $success-color;
 }
 
@@ -178,3 +178,73 @@ h6 {
     width: 100%;
   }
 }
+
+.select {
+  position: relative;
+  &__text {
+    padding: 10px 15px;
+    padding-right: 36px;
+    border-radius: 6px;
+    line-height: 20px;
+    border: 0.5px solid $lightGrey-color-three;
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    &::after {
+      content: url(../icons/arrowToDown.svg);
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__wrapper {
+    padding-top: 8px;
+    position: absolute;
+    width: 100%;
+    display: none;
+  }
+  &__wrapper.active {
+    display: block;
+  }
+  &__items {
+    padding: 8px 0;
+    width: 100%;
+    background-color: $white-color;
+    border-radius: 6px;
+    box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+  }
+  &__item {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__item.active {
+    background: rgba(255, 220, 0, 0.05);
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      content: "";
+      background-color: $yellow-color;
+    }
+  }
+}
+
+// .all-window-bg{
+//   width: 100%;
+//   height: 100vh;
+//   background-color: red;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }

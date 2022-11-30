@@ -39,15 +39,15 @@ h6 {
 }
 
 .in-work {
-  background-color: #007BFB;
+  background-color: #007bfb;
 }
 
 .failed {
-  background-color: #FF0C0C;
+  background-color: #ff0c0c;
 }
 
 .success {
-  background-color: #00D359;
+  background-color: #00d359;
 }
 
 .container {
@@ -176,6 +176,69 @@ h6 {
     width: 100%;
   }
 }
+.select {
+  position: relative;
+}
+.select__text {
+  padding: 10px 15px;
+  padding-right: 36px;
+  border-radius: 6px;
+  line-height: 20px;
+  border: 0.5px solid #dddcdc;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.select__text::after {
+  content: url(../icons/arrowToDown.svg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.select__wrapper {
+  padding-top: 8px;
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.select__wrapper.active {
+  display: block;
+}
+.select__items {
+  padding: 8px 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+          box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+}
+.select__item {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.select__item:last-child {
+  margin-bottom: 0;
+}
+.select__item.active {
+  background: rgba(255, 220, 0, 0.05);
+  position: relative;
+}
+.select__item.active::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  content: "";
+  background-color: #ffdc00;
+}
+
 .header {
   padding: 8px 40px 0;
   border-radius: 8px;
@@ -652,7 +715,6 @@ h6 {
 }
 .content .kanban__item {
   width: 280px;
-  min-width: 280px;
   margin-right: 20px;
 }
 .content .kanban__item:last-child {
@@ -765,68 +827,8 @@ h6 {
   margin-right: 6px;
   margin-bottom: 0;
 }
-.content .kanban .create-deal__select {
-  position: relative;
-}
 .content .kanban .create-deal__currency {
-  padding: 10px 15px;
   width: 61px;
-  padding-right: 36px;
-  border-radius: 6px;
-  line-height: 20px;
-  border: 0.5px solid #dddcdc;
-  position: relative;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content .kanban .create-deal__currency::after {
-  content: url(../icons/arrowToDown.svg);
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.content .kanban .create-deal__select-wrapper {
-  padding-top: 8px;
-  position: absolute;
-  width: 100%;
-  display: none;
-}
-.content .kanban .create-deal__select-wrapper.active {
-  display: block;
-}
-.content .kanban .create-deal__select-items {
-  padding: 8px 0;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 6px;
-  -webkit-box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
-          box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
-}
-.content .kanban .create-deal__select-item {
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.content .kanban .create-deal__select-item:last-child {
-  margin-bottom: 0;
-}
-.content .kanban .create-deal__select-item.active {
-  background: rgba(255, 220, 0, 0.05);
-  position: relative;
-}
-.content .kanban .create-deal__select-item.active::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  content: "";
-  background-color: #ffdc00;
 }
 .content .kanban .create-deal__new-client {
   cursor: pointer;
@@ -992,7 +994,7 @@ h6 {
   margin-right: 3px;
 }
 .content .kanban .deal__client, .content .kanban .deal__company {
-  color: #007BFB;
+  color: #007bfb;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -1063,13 +1065,13 @@ h6 {
   background-color: #ffdc00;
 }
 .content .kanban__in-work .deal::before {
-  background-color: #007BFB;
+  background-color: #007bfb;
 }
 .content .kanban__failed .deal::before {
-  background-color: #FF0C0C;
+  background-color: #ff0c0c;
 }
 .content .kanban__success .deal::before {
-  background-color: #00D359;
+  background-color: #00d359;
 }
 
 .hide {
@@ -1084,7 +1086,7 @@ h6 {
   top: 0;
   left: 0;
   padding: 30px 30px 50px;
-  display: block;
+  display: none;
 }
 .company-card__content {
   background-color: #f9f9f9;
@@ -1183,10 +1185,6 @@ h6 {
 .company-card__box {
   width: 50%;
   height: 100%;
-  overflow-y: scroll;
-}
-.company-card__box::-webkit-scrollbar {
-  width: 0;
 }
 .company-card__box:first-child {
   border-right: 1px solid #c4c4c4;
@@ -1254,7 +1252,7 @@ h6 {
 }
 .company-card .about__email,
 .company-card .history__email {
-  color: #007BFB;
+  color: #007bfb;
 }
 .company-card .about__btn,
 .company-card .history__btn {
@@ -1279,10 +1277,19 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
+.company-card .about .no-active,
+.company-card .history .no-active {
+  display: none;
+}
+.company-card .about__max-content {
+  max-height: calc(100vh - 365px);
+  overflow-y: scroll;
+}
+.company-card .about__max-content::-webkit-scrollbar {
+  width: 0;
+}
 .company-card .edit-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1290,6 +1297,7 @@ h6 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  background-color: #fff;
 }
 .company-card .edit-form__input-title {
   margin-bottom: 4px;
@@ -1297,11 +1305,12 @@ h6 {
   font-weight: 500;
 }
 .company-card .edit-form__input {
-  padding: 10px 15px;
+  padding: 9px 15px;
   outline: none;
   border-radius: 6px;
   border: 1px solid #c4c4c4;
   width: 100%;
+  max-width: 100%;
   margin-bottom: 15px;
   line-height: 20px;
 }
@@ -1325,8 +1334,81 @@ h6 {
   font-weight: bold;
   color: #c4c4c4;
 }
-.company-card .edit-form__option {
-  background-color: #c4c4c4;
+.company-card .edit-form .edit-select {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.company-card .edit-form .edit-select__text {
+  color: #c4c4c4;
+  font-weight: 500;
+  border: 1px solid #c4c4c4;
+}
+.company-card .edit-form .edit-select__text.active {
+  color: #161616;
+}
+.company-card .edit-form__box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+.company-card .edit-form__box .select {
+  max-width: 203px;
+  min-width: 203px;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+.company-card .edit-form__box .select__text {
+  border: 1px solid #c4c4c4;
+}
+.company-card .edit-form__box input {
+  margin-bottom: 0;
+}
+.company-card .edit-form__box-div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.company-card .edit-form__input-two {
+  width: 100%;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  background: none;
+}
+.company-card .edit-form__icon-one {
+  padding-right: 13px;
+  margin-right: 16px;
+  border-right: 1px solid #dddcdc;
+}
+.company-card .edit-form__icon, .company-card .edit-form__delete-icon {
+  cursor: pointer;
+}
+.company-card .edit-form__delete-icon {
+  margin-left: 18px;
+}
+.company-card .edit-form__id {
+  margin-bottom: 15px;
+}
+.company-card .about.active {
+  position: sticky;
+  z-index: 999;
+}
+.company-card .edit-form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .company-card .history {
   position: relative;
@@ -1403,9 +1485,28 @@ h6 {
   line-height: 20px;
 }
 .company-card .history__link {
-  color: #007BFB;
+  color: #007bfb;
+}
+.company-card #about-delete-btn.active {
+  color: #ff0c0c;
 }
 
 .company-card.active {
   display: block;
+}
+
+.all-window-bg {
+  display: none;
+}
+
+.all-window-bg.active {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: rgba(22, 22, 22, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 20px;
 }

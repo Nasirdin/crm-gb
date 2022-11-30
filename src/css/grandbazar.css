@@ -39,15 +39,15 @@ h6 {
 }
 
 .in-work {
-  background-color: #007BFB;
+  background-color: #007bfb;
 }
 
 .failed {
-  background-color: #FF0C0C;
+  background-color: #ff0c0c;
 }
 
 .success {
-  background-color: #00D359;
+  background-color: #00d359;
 }
 
 .container {
@@ -175,4 +175,66 @@ h6 {
   .btn {
     width: 100%;
   }
+}
+.select {
+  position: relative;
+}
+.select__text {
+  padding: 10px 15px;
+  padding-right: 36px;
+  border-radius: 6px;
+  line-height: 20px;
+  border: 0.5px solid #dddcdc;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.select__text::after {
+  content: url(../icons/arrowToDown.svg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.select__wrapper {
+  padding-top: 8px;
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.select__wrapper.active {
+  display: block;
+}
+.select__items {
+  padding: 8px 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+          box-shadow: 0px 0px 9px rgba(186, 186, 186, 0.35);
+}
+.select__item {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.select__item:last-child {
+  margin-bottom: 0;
+}
+.select__item.active {
+  background: rgba(255, 220, 0, 0.05);
+  position: relative;
+}
+.select__item.active::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  content: "";
+  background-color: #ffdc00;
 }
