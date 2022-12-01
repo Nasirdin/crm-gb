@@ -95,7 +95,6 @@
               </li>
             </ul>
           </div>
-          <!-- KANBAN - GRID -->
 
           <ul class="kanban">
             <li class="kanban__item kanban__new">
@@ -120,12 +119,12 @@
                     <label class="create-deal__label"
                       ><input class="create-deal__input" id="deal-price" type="number" placeholder="0.00"
                     /></label>
-                    <div class="create-deal__select">
-                      <p class="create-deal__currency">₽</p>
-                      <div class="create-deal__select-wrapper">
-                        <ul class="create-deal__select-items">
-                          <li class="create-deal__select-item rub active">₽</li>
-                          <li class="create-deal__select-item usd">$</li>
+                    <div class="select">
+                      <p class="create-deal__currency select__text">₽</p>
+                      <div class="create-deal__select-wrapper select__wrapper">
+                        <ul class="select__items">
+                          <li class="create-deal__select-item select__item rub active">₽</li>
+                          <li class="create-deal__select-item select__item usd">$</li>
                         </ul>
                       </div>
                     </div>
@@ -137,7 +136,7 @@
                     <input class="create-deal__input" id="deal-client" type="text" placeholder="Имя, телефон" />
                     <img class="create-deal__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
                   </label>
-                  <button class="create-deal__new-client">
+                  <button class="create-deal__new-client add-btn">
                     <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участника
                   </button>
                   <p class="create-deal__titles">Клиент</p>
@@ -151,12 +150,12 @@
                     <button class="create-deal__btn create-deal__btn_white" id="deal-cancel">Отменить</button>
                   </div>
                 </form>
-                <ul class="kanban__deals deals">
-                  <li class="deals__deal deal">
+                <ul class="kanban__deals deals deals-new">
+                  <li class="deals__deal deal" draggable="true">
                     <div class="deal__content">
                       <h3 class="deal__title">Принтеры</h3>
                       <div class="deal__sum-block">
-                        <p class="deal__price deal__price_new">150000</p>
+                        <p class="deal__price">150000</p>
                         <span class="deal__currency-simbol">₽</span>
                       </div>
                       <a class="deal__client">Вадим Еланский</a>
@@ -188,6 +187,7 @@
                 <button class="kanban__create-btn big-plus" id="create-deal-success-btn">
                   <span class="kanban__btn-plus"></span>
                 </button>
+                <ul class="kanban__deals deals deals-in-work"></ul>
               </div>
             </li>
             <li class="kanban__item kanban__failed">
@@ -212,12 +212,12 @@
                     <label class="create-deal__label"
                       ><input class="create-deal__input" id="deal-price" type="number" placeholder="0.00"
                     /></label>
-                    <div class="create-deal__select">
-                      <p class="create-deal__currency">₽</p>
-                      <div class="create-deal__select-wrapper">
-                        <ul class="create-deal__select-items">
-                          <li class="create-deal__select-item rub active">₽</li>
-                          <li class="create-deal__select-item usd">$</li>
+                    <div class="select">
+                      <p class="create-deal__currency select__text">₽</p>
+                      <div class="create-deal__select-wrapper select__wrapper">
+                        <ul class="select__items">
+                          <li class="create-deal__select-item select__item rub active">₽</li>
+                          <li class="create-deal__select-item select__item usd">$</li>
                         </ul>
                       </div>
                     </div>
@@ -239,12 +239,12 @@
                     <button class="create-deal__btn create-deal__btn_white" id="deal-cancel">Отменить</button>
                   </div>
                 </form>
-                <ul class="kanban__deals deals">
-                  <li class="deals__deal deal">
+                <ul class="kanban__deals deals deals-failed">
+                  <li class="deals__deal deal" draggable="true">
                     <div class="deal__content">
                       <h3 class="deal__title">Сканеры</h3>
                       <div class="deal__sum-block">
-                        <p class="deal__price deal__price_failed">200000</p>
+                        <p class="deal__price">200000</p>
                         <span class="deal__currency-simbol">₽</span>
                       </div>
                       <a class="deal__client">Вадим Еланский</a>
@@ -275,9 +275,219 @@
                 <button class="kanban__create-btn big-plus" id="create-deal-success-btn">
                   <span class="kanban__btn-plus"></span>
                 </button>
+                <ul class="kanban__deals deals deals-success"></ul>
               </div>
             </li>
           </ul>
+        </div>
+
+        <!-- company card -->
+        <div class="all-window-bg"></div>
+
+        <div class="company-card">
+          <div class="company-card__content">
+            <span class="company-card__close"></span>
+            <div class="company-card__header">
+              <h2 class="company-card__title">ВТК МСК</h2>
+              <button class="company-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+              <button class="company-card__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+            </div>
+            <div class="company-card__second-header">
+              <button class="company-card__white-btn">Общие</button>
+            </div>
+            <div class="company-card__block">
+              <div class="company-card__box">
+                <div class="company-card__about about">
+                  <div class="about__header">
+                    <div class="about__title-block">
+                      <h3 class="about__title">О компании</h3>
+                      <button class="company-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+                    </div>
+                    <button class="about__btn" id="about-edit-btn">Изменить</button>
+                    <button class="about__btn no-active" id="about-cancel-btn">Отменить</button>
+                  </div>
+                  <div class="about__max-content">
+                    <form class="about__edit-form edit-form">
+                      <label class="edit-form__input-title" for="company-card-edit-name">Название компании</label>
+                      <input
+                        class="edit-form__input"
+                        id="company-card-edit-name"
+                        type="text"
+                        placeholder="Название компании"
+                      />
+                      <label class="edit-form__input-title">Тип компании</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__select-wrapper select__wrapper">
+                          <ul class="edit-select__select-items select__items">
+                            <li class="edit-select__select-item select__item active">₽</li>
+                            <li class="edit-select__select-item select__item">$</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title">Сфера деятельности</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__select-wrapper select__wrapper">
+                          <ul class="edit-select__select-items select__items">
+                            <li class="edit-select__select-item select__item active">₽</li>
+                            <li class="edit-select__select-item select__item">$</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="company-card-edit-phone">Телефон</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="company-card-edit-phone" type="text" value="+7" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__select-wrapper select__wrapper">
+                            <ul class="edit-select__select-items select__items">
+                              <li class="edit-select__select-item select__item active">Рабочий</li>
+                              <li class="edit-select__select-item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="company-card-edit-site">Сайт</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="company-card-edit-site" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Корпоративный</p>
+                          <div class="edit-select__select-wrapper select__wrapper">
+                            <ul class="edit-select__select-items select__items">
+                              <li class="edit-select__select-item select__item active">Корпоративный</li>
+                              <li class="edit-select__select-item select__item">Корпоративный</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-site add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="company-card-edit-contact"
+                        >Контакты, связанные с компанией</label
+                      >
+                      <div class="edit-form__input edit-form__box">
+                        <div class="edit-form__box-div">
+                          <img class="edit-form__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                          <input
+                            class="edit-form__input-two"
+                            id="company-card-edit-contact"
+                            type="text"
+                            placeholder="Имя, телефон или E-mail"
+                          />
+                        </div>
+                        <img class="edit-form__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                      </div>
+                      <button class="edit-form__add-contact add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участников
+                      </button>
+                      <p class="edit-form__input-title">ID</p>
+                      <p class="edit-form__id">4</p>
+
+                      <label class="edit-form__input-title" for="company-card-edit-annual-turnover"
+                        >Годовой оборот</label
+                      >
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="company-card-edit-annual-turnover" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Российский рубль</p>
+                          <div class="edit-select__select-wrapper select__wrapper">
+                            <ul class="edit-select__select-items select__items">
+                              <li class="edit-select__select-item select__item active">Российский рубль</li>
+                              <li class="edit-select__select-item select__item">Американский доллар</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="company-card-edit-bank-details"
+                        >Банковские реквизиты</label
+                      >
+                      <textarea class="edit-form__input" id="company-card-edit-bank-details" type="text"></textarea>
+                      <label class="edit-form__input-title" for="company-card-edit-email">E-mail</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="company-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__select-wrapper select__wrapper">
+                            <ul class="edit-select__select-items select__items">
+                              <li class="edit-select__select-item select__item active">Рабочий</li>
+                              <li class="edit-select__select-item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="company-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__select-wrapper select__wrapper">
+                            <ul class="edit-select__select-items select__items">
+                              <li class="edit-select__select-item select__item active">Рабочий</li>
+                              <li class="edit-select__select-item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <div class="edit-form__btns">
+                        <button class="edit-form__btn" id="edit-form__btn">Отменить</button>
+                        <button class="edit-form__btn edit-form__btn_yellow">Сохранить</button>
+                      </div>
+                    </form>
+                    <div class="about__content">
+                      <p class="about__grey-text">ID</p>
+                      <p class="about__text about__id">4</p>
+                      <p class="about__grey-text">Годовой оборот</p>
+                      <p class="about__text about__annual-turnover"><span class="about__sum">0</span></p>
+                      <p class="about__grey-text">Банковские реквизиты</p>
+                      <p class="about__text about__bank-details">Не заполнено</p>
+                      <p class="about__grey-text">E-mail</p>
+                      <a class="about__text about__email" href="#">ывкпыв@srfs.ru</a>
+                    </div>
+                    <div class="about__footer">
+                      <button class="about__btn" id="about-delete-btn">Удалить раздел</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="company-card__box">
+                <div class="company-card__history history">
+                  <h3 class="history__title">История</h3>
+                  <span class="history__date">4 ноября</span>
+                  <ul class="history__items">
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Сделка <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">ВТК МСК</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -600,6 +600,21 @@ h6 {
   overflow: hidden;
 }
 
+.add-btn {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  color: #99a2ad;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 8px;
+}
+.add-btn img {
+  margin-right: 5px;
+}
+
 .navigation {
   min-width: 340px;
   height: 100vh;
@@ -829,20 +844,6 @@ h6 {
 }
 .content .kanban .create-deal__currency {
   width: 61px;
-}
-.content .kanban .create-deal__new-client {
-  cursor: pointer;
-  background: none;
-  outline: none;
-  border: none;
-  color: #99a2ad;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-  margin-top: 8px;
-}
-.content .kanban .create-deal__new-client img {
-  margin-right: 5px;
 }
 .content .kanban .create-deal.active {
   display: block;
@@ -1095,6 +1096,7 @@ h6 {
   border-radius: 20px;
   padding: 30px;
   position: relative;
+  overflow: hidden;
 }
 .company-card__close {
   cursor: pointer;
@@ -1180,7 +1182,6 @@ h6 {
           justify-content: space-between;
   padding: 20px 0;
   height: calc(100% - 93px);
-  position: relative;
 }
 .company-card__box {
   width: 50%;
@@ -1282,7 +1283,7 @@ h6 {
   display: none;
 }
 .company-card .about__max-content {
-  max-height: calc(100vh - 365px);
+  max-height: calc(100vh - 400px);
   overflow-y: scroll;
 }
 .company-card .about__max-content::-webkit-scrollbar {
@@ -1400,6 +1401,44 @@ h6 {
 }
 .company-card .edit-form__id {
   margin-bottom: 15px;
+}
+.company-card .edit-form .add-btn {
+  margin-top: -8px;
+  margin-bottom: 15px;
+}
+.company-card .edit-form__btns {
+  background-color: #fff;
+  position: absolute;
+  bottom: -58px;
+  left: -30px;
+  width: 223%;
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #dddcdc;
+}
+.company-card .edit-form__btn {
+  border: none;
+  background: none;
+  outline: none;
+  color: #99a2ad;
+  font-weight: 700;
+  cursor: pointer;
+}
+.company-card .edit-form__btn_yellow {
+  background: #ffdc00;
+  border-radius: 6px;
+  border: none;
+  padding: 13px 27px;
+  margin-left: 30px;
+  color: #161616;
 }
 .company-card .about.active {
   position: sticky;

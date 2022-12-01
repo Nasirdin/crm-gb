@@ -205,6 +205,7 @@ openCompanyCard();
 
 const openEditModal = () => {
   const aboutEditBtn = document.getElementById("about-edit-btn");
+  const aboutEditBtnTwo = document.getElementById("edit-form__btn");
   const aboutCancelBtn = document.getElementById("about-cancel-btn");
   const aboutDeleteBtn = document.getElementById("about-delete-btn");
   const aboutContent = document.querySelector(".about__content");
@@ -230,5 +231,17 @@ const openEditModal = () => {
     about.classList.remove("active");
     aboutDeleteBtn.classList.remove("active");
   });
+  aboutEditBtnTwo.addEventListener("click", (e) => {
+    e.preventDefault();
+    aboutEditBtn.classList.remove("no-active");
+    aboutCancelBtn.classList.add("no-active");
+    aboutEditForm.classList.remove("active");
+    aboutContent.classList.remove("no-active");
+    allWindowBg.classList.remove("active");
+    about.classList.remove("active");
+    aboutDeleteBtn.classList.remove("active");
+  });
 };
 openEditModal();
+
+
