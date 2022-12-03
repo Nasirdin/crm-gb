@@ -219,13 +219,13 @@
   .second-select-btn,
   &__second-items {
     margin-top: 15px;
-    width: 174px;
+    width: 180px;
     border-radius: 8px;
     top: 45px;
     left: 0;
     background-color: $white-color;
     padding: 16px 0px;
-    z-index: 9;
+    z-index: 1;
     &__item,
     .second-header__secound-item {
       cursor: pointer;
@@ -267,7 +267,7 @@
       z-index: 10;
     }
     .second-header__second-items {
-      width: 230px;
+      width: 238px;
     }
     .second-header__text {
       &::after {
