@@ -425,7 +425,8 @@
   display: none !important;
 }
 
-.company-card {
+.company-card,
+.client-card {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -486,7 +487,7 @@
     cursor: pointer;
   }
   &__second-header {
-    border-bottom: 1px solid $lightGrey-color-four;
+    border-bottom: 1px solid $lightGrey-color-three;
   }
   &__white-btn {
     cursor: pointer;
@@ -521,12 +522,12 @@
   &__box {
     width: 50%;
     height: 100%;
-    // overflow-y: scroll;
-    // &::-webkit-scrollbar {
-    //   width: 0;
-    // }
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
     &:first-child {
-      border-right: 1px solid $lightGrey-color-four;
+      border-right: 1px solid $lightGrey-color-three;
       padding-right: 30px;
     }
     &:last-child {
@@ -534,15 +535,18 @@
     }
   }
   .about,
+  .additionally,
   .history {
     background-color: $white-color;
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid $lightGrey-color-three;
     &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid $lightGrey-color-four;
+      border-bottom: 1px solid $lightGrey-color-three;
       padding-bottom: 12px;
       margin-bottom: 15px;
     }
@@ -567,12 +571,27 @@
       line-height: 20px;
       display: inline-block;
     }
+
     &__annual-turnover {
       line-height: 26px;
       font-size: 22px;
     }
-    &__email {
+    &__link {
       color: $inWork-color;
+      margin-bottom: 15px;
+      font-weight: 500;
+      line-height: 20px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    &__responsible {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      line-height: 11px;
+    }
+    &__img {
+      margin-right: 10px;
     }
     &__btn {
       background: none;
@@ -583,6 +602,9 @@
       color: $grey-color;
       line-height: 20px;
       cursor: pointer;
+    }
+    &__btn_del {
+      color: $failed-color;
     }
     &__footer {
       display: flex;
@@ -605,7 +627,6 @@
     flex-direction: column;
     align-items: flex-start;
     background-color: $white-color;
-
     &__input-title {
       margin-bottom: 4px;
       line-height: 20px;
@@ -628,6 +649,9 @@
     .edit-select {
       width: 100%;
       margin-bottom: 15px;
+      &__item {
+        padding: 6px 24px;
+      }
       &__text {
         color: $lightGrey-color-four;
         font-weight: 500;
@@ -635,6 +659,10 @@
       }
       &__text.active {
         color: $dark-color;
+      }
+      &__wrapper {
+        width: auto;
+        right: 5px;
       }
     }
     &__box {
@@ -740,8 +768,8 @@
       background-color: $white-color;
     }
     &__items {
-      border-left: 1px solid $lightGrey-color-four;
-      border-top: 1px solid $lightGrey-color-four;
+      border-left: 1px solid $lightGrey-color-three;
+      border-top: 1px solid $lightGrey-color-three;
       padding: 45px 0 0 50px;
       margin-left: 20px;
     }
@@ -751,34 +779,52 @@
       background-color: $lightGrey-color-two;
       border-radius: 6px;
       margin-bottom: 20px;
+      &::before {
+        width: 2px;
+        height: calc(100% - 20px);
+        border-radius: 6px;
+        left: -1px;
+        top: 10px;
+        content: "";
+        position: absolute;
+      }
       &:last-child {
         margin-bottom: 0;
       }
     }
-    &__btn {
+    &__icon-block {
       position: absolute;
       left: -70px;
       top: 50%;
+      width: 40px;
+      height: 40px;
       transform: translateY(-50%);
-      padding: 11px;
+      display: flex;
       line-height: 10px;
       border-radius: 6px;
-      border: 1px solid $lightGrey-color-four;
+      border: 1px solid $lightGrey-color-three;
       background-color: $white-color;
+      &::before {
+        position: absolute;
+        content: url(../icons/urlIcon.svg);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
       &:after {
         position: absolute;
         content: "";
         width: 30px;
         height: 1px;
-        background-color: $lightGrey-color-four;
+        background-color: $lightGrey-color-three;
         top: 50%;
         right: -31px;
       }
     }
     &__img-icon {
       position: absolute;
-      top: 18px;
-      right: 24px;
+      top: 15px;
+      right: 21px;
     }
     &__info-text {
       color: $grey-color;
@@ -795,7 +841,33 @@
       line-height: 20px;
     }
     &__link {
-      color: $inWork-color;
+      margin-bottom: 0;
+    }
+    &__item_new {
+      &::before {
+        background-color: $yellow-color;
+      }
+    }
+    &__item_in-work {
+      &::before {
+        background-color: $inWork-color;
+      }
+    }
+    &__item_failed {
+      &::before {
+        background-color: $failed-color;
+      }
+    }
+    &__item_success {
+      &::before {
+        background-color: $success-color;
+      }
+      .history__icon-block {
+        border: 1px solid $success-color;
+        &::before {
+          content: url(../icons/success-icon.svg);
+        }
+      }
     }
   }
   #about-delete-btn.active {
@@ -803,7 +875,8 @@
   }
 }
 
-.company-card.active {
+.company-card.active,
+.client-card.active {
   display: block;
 }
 .all-window-bg {

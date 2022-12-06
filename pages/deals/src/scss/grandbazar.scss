@@ -204,6 +204,8 @@ h6 {
     position: absolute;
     width: 100%;
     display: none;
+    background-color: $white-color;
+    z-index: 1;
   }
   &__wrapper.active {
     display: block;

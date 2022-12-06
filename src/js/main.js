@@ -203,10 +203,10 @@ const openCompanyCard = () => {
   };
 
   dealCompany.forEach((cardLink) => {
-    addActiveCard(cardLink, companyCard)
+    addActiveCard(cardLink, companyCard);
   });
   dealClient.forEach((cardLink) => {
-    addActiveCard(cardLink, clientCard)
+    addActiveCard(cardLink, clientCard);
   });
   companyCardClose.addEventListener("click", () => {
     companyCard.classList.remove("active");

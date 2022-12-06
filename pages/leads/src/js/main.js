@@ -190,15 +190,29 @@ dragAndDrop();
 
 const openCompanyCard = () => {
   const companyCardClose = document.querySelector(".company-card__close");
+  const clientCardClose = document.querySelector(".client-card__close");
   const companyCard = document.querySelector(".company-card");
+  const clientCard = document.querySelector(".client-card");
   const dealCompany = document.querySelectorAll(".deal__company");
-  dealCompany.forEach((dealCompanyLink) => {
-    dealCompanyLink.addEventListener("click", () => {
-      companyCard.classList.add("active");
+  const dealClient = document.querySelectorAll(".deal__client");
+
+  const addActiveCard = (cardLink, card) => {
+    cardLink.addEventListener("click", () => {
+      card.classList.add("active");
     });
+  };
+
+  dealCompany.forEach((cardLink) => {
+    addActiveCard(cardLink, companyCard)
+  });
+  dealClient.forEach((cardLink) => {
+    addActiveCard(cardLink, clientCard)
   });
   companyCardClose.addEventListener("click", () => {
     companyCard.classList.remove("active");
+  });
+  clientCardClose.addEventListener("click", () => {
+    clientCard.classList.remove("active");
   });
 };
 openCompanyCard();
@@ -244,4 +258,27 @@ const openEditModal = () => {
 };
 openEditModal();
 
+const cardCompanyOpenSelect = () => {
+  const editSelectText = document.querySelectorAll(".edit-select__text");
+  const editSelectWrapper = document.querySelectorAll(".edit-select__wrapper");
+  const editSelectItem = document.querySelectorAll(".edit-select__item");
 
+  editSelectText.forEach((item) => {
+    item.addEventListener("click", () => {
+      for (let i = 0; i < editSelectText.length; i++) {
+        if (editSelectText[i] === item) {
+          editSelectWrapper[i].classList.toggle("active");
+        }
+      }
+    });
+  });
+
+  editSelectItem.forEach((selectItem) => {
+    selectItem.addEventListener("click", () => {
+      editSelectItem.forEach((item) => {
+        item.classList.remove("active");
+      });
+    });
+  });
+};
+cardCompanyOpenSelect();

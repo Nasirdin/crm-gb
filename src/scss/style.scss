@@ -426,7 +426,8 @@
 }
 
 .company-card,
-.client-card {
+.client-card,
+.create-deal-card {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -522,7 +523,7 @@
   &__box {
     width: 50%;
     height: 100%;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 0;
     }
@@ -534,6 +535,9 @@
       padding-left: 30px;
     }
   }
+
+
+
   .about,
   .additionally,
   .history {
@@ -876,7 +880,8 @@
 }
 
 .company-card.active,
-.client-card.active {
+.client-card.active,
+.create-deal-card.active {
   display: block;
 }
 .all-window-bg {

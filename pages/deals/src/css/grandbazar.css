@@ -203,6 +203,8 @@ h6 {
   position: absolute;
   width: 100%;
   display: none;
+  background-color: #fff;
+  z-index: 1;
 }
 .select__wrapper.active {
   display: block;

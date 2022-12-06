@@ -318,20 +318,20 @@
                       <label class="edit-form__input-title">Тип компании</label>
                       <div class="edit-select select">
                         <p class="edit-select__text select__text">Не выбран</p>
-                        <div class="edit-select__select-wrapper select__wrapper">
-                          <ul class="edit-select__select-items select__items">
-                            <li class="edit-select__select-item select__item active">₽</li>
-                            <li class="edit-select__select-item select__item">$</li>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Коммерческие</li>
+                            <li class="edit-select__item select__item">Некоммерческие</li>
                           </ul>
                         </div>
                       </div>
                       <label class="edit-form__input-title">Сфера деятельности</label>
                       <div class="edit-select select">
                         <p class="edit-select__text select__text">Не выбран</p>
-                        <div class="edit-select__select-wrapper select__wrapper">
-                          <ul class="edit-select__select-items select__items">
-                            <li class="edit-select__select-item select__item active">₽</li>
-                            <li class="edit-select__select-item select__item">$</li>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Производство</li>
+                            <li class="edit-select__item select__item">Обмен</li>
                           </ul>
                         </div>
                       </div>
@@ -340,10 +340,10 @@
                         <input class="edit-form__input" id="company-card-edit-phone" type="text" value="+7" />
                         <div class="edit-select select">
                           <p class="edit-select__text select__text active">Рабочий</p>
-                          <div class="edit-select__select-wrapper select__wrapper">
-                            <ul class="edit-select__select-items select__items">
-                              <li class="edit-select__select-item select__item active">Рабочий</li>
-                              <li class="edit-select__select-item select__item">Рабочий</li>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Мобильный</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
                             </ul>
                           </div>
                         </div>
@@ -357,10 +357,10 @@
                         <input class="edit-form__input" id="company-card-edit-site" type="text" />
                         <div class="edit-select select">
                           <p class="edit-select__text select__text active">Корпоративный</p>
-                          <div class="edit-select__select-wrapper select__wrapper">
-                            <ul class="edit-select__select-items select__items">
-                              <li class="edit-select__select-item select__item active">Корпоративный</li>
-                              <li class="edit-select__select-item select__item">Корпоративный</li>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Корпоративный</li>
+                              <li class="edit-select__item select__item">Информационный</li>
                             </ul>
                           </div>
                         </div>
@@ -397,10 +397,10 @@
                         <input class="edit-form__input" id="company-card-edit-annual-turnover" type="text" />
                         <div class="edit-select select">
                           <p class="edit-select__text select__text active">Российский рубль</p>
-                          <div class="edit-select__select-wrapper select__wrapper">
-                            <ul class="edit-select__select-items select__items">
-                              <li class="edit-select__select-item select__item active">Российский рубль</li>
-                              <li class="edit-select__select-item select__item">Американский доллар</li>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Российский рубль</li>
+                              <li class="edit-select__item select__item">Российский доллар</li>
                             </ul>
                           </div>
                         </div>
@@ -414,10 +414,10 @@
                         <input class="edit-form__input" id="company-card-edit-phone" type="text" />
                         <div class="edit-select select">
                           <p class="edit-select__text select__text active">Рабочий</p>
-                          <div class="edit-select__select-wrapper select__wrapper">
-                            <ul class="edit-select__select-items select__items">
-                              <li class="edit-select__select-item select__item active">Рабочий</li>
-                              <li class="edit-select__select-item select__item">Рабочий</li>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
                             </ul>
                           </div>
                         </div>
@@ -427,10 +427,10 @@
                         <input class="edit-form__input" id="company-card-edit-phone" type="text" />
                         <div class="edit-select select">
                           <p class="edit-select__text select__text active">Рабочий</p>
-                          <div class="edit-select__select-wrapper select__wrapper">
-                            <ul class="edit-select__select-items select__items">
-                              <li class="edit-select__select-item select__item active">Рабочий</li>
-                              <li class="edit-select__select-item select__item">Рабочий</li>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
                             </ul>
                           </div>
                         </div>
@@ -466,22 +466,411 @@
                   <span class="history__date">4 ноября</span>
                   <ul class="history__items">
                     <li class="history__item">
-                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <div class="history__icon-block"></div>
                       <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
                       <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
                       <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
                     </li>
                     <li class="history__item">
-                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <div class="history__icon-block"></div>
                       <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
                       <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
                       <p class="history__text">Сделка <a class="history__link" href="#">картриджи</a></p>
                     </li>
                     <li class="history__item">
-                      <button class="history__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+                      <div class="history__icon-block"></div>
                       <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
                       <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
                       <p class="history__text">ВТК МСК</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card__content">
+            <span class="client-card__close"></span>
+            <div class="client-card__header">
+              <h2 class="client-card__title">Вадим Еланский</h2>
+              <button class="client-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+              <button class="client-card__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+            </div>
+            <div class="client-card__second-header">
+              <button class="client-card__white-btn">Общие</button>
+            </div>
+            <div class="client-card__block">
+              <div class="client-card__box">
+                <div class="client-card__about about">
+                  <div class="about__header">
+                    <div class="about__title-block">
+                      <h3 class="about__title">О контакте</h3>
+                      <button class="client-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+                    </div>
+                    <button class="about__btn" id="about-edit-btn">Изменить</button>
+                    <button class="about__btn no-active" id="about-cancel-btn">Отменить</button>
+                  </div>
+                  <div class="about__max-content">
+                    <form class="about__edit-form edit-form">
+                      <label class="edit-form__input-title" for="client-card-edit-name">Название компании</label>
+                      <input
+                        class="edit-form__input"
+                        id="client-card-edit-name"
+                        type="text"
+                        placeholder="Название компании"
+                      />
+                      <label class="edit-form__input-title">Тип компании</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Коммерческие</li>
+                            <li class="edit-select__item select__item">Некоммерческие</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title">Сфера деятельности</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Производство</li>
+                            <li class="edit-select__item select__item">Обмен</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="client-card-edit-phone">Телефон</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" value="+7" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Мобильный</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="client-card-edit-site">Сайт</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-site" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Корпоративный</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Корпоративный</li>
+                              <li class="edit-select__item select__item">Информационный</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-site add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="client-card-edit-contact"
+                        >Контакты, связанные с компанией</label
+                      >
+                      <div class="edit-form__input edit-form__box">
+                        <div class="edit-form__box-div">
+                          <img class="edit-form__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                          <input
+                            class="edit-form__input-two"
+                            id="client-card-edit-contact"
+                            type="text"
+                            placeholder="Имя, телефон или E-mail"
+                          />
+                        </div>
+                        <img class="edit-form__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                      </div>
+                      <button class="edit-form__add-contact add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участников
+                      </button>
+                      <p class="edit-form__input-title">ID</p>
+                      <p class="edit-form__id">4</p>
+
+                      <label class="edit-form__input-title" for="client-card-edit-annual-turnover"
+                        >Годовой оборот</label
+                      >
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-annual-turnover" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Российский рубль</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Российский рубль</li>
+                              <li class="edit-select__item select__item">Российский доллар</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="client-card-edit-bank-details"
+                        >Банковские реквизиты</label
+                      >
+                      <textarea class="edit-form__input" id="client-card-edit-bank-details" type="text"></textarea>
+                      <label class="edit-form__input-title" for="client-card-edit-email">E-mail</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <div class="edit-form__btns">
+                        <button class="edit-form__btn" id="edit-form__btn">Отменить</button>
+                        <button class="edit-form__btn edit-form__btn_yellow">Сохранить</button>
+                      </div>
+                    </form>
+                    <div class="about__content">
+                      <p class="about__grey-text">Телефон</p>
+                      <a class="about__link" href="#">000 000-00-00</a>
+                      <p class="about__grey-text">Компания</p>
+                      <p class="about__text"><span class="about__sum">Невалогистик</span></p>
+                      <p class="about__grey-text">Банковские реквизиты</p>
+                      <p class="about__text about__bank-details">Не заполнено</p>
+                      <p class="about__grey-text">E-mail</p>
+                      <a class="about__link" href="#">ывкпыв@srfs.ru</a>
+                    </div>
+                    <div class="about__footer">
+                      <button class="about__btn about__btn_del" id="about-delete-btn">Удалить раздел</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="client-card__additionally additionally">
+                  <div class="additionally__header">
+                    <div class="additionally__title-block">
+                      <h3 class="additionally__title">Дополнительно</h3>
+                      <button class="client-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+                    </div>
+                    <button class="additionally__btn" id="about-edit-btn">Изменить</button>
+                    <button class="additionally__btn no-active" id="about-cancel-btn">Отменить</button>
+                  </div>
+                  <div class="additionally__max-content">
+                    <form class="additionally__edit-form edit-form">
+                      <label class="edit-form__input-title" for="client-card-edit-name">Название компании</label>
+                      <input
+                        class="edit-form__input"
+                        id="client-card-edit-name"
+                        type="text"
+                        placeholder="Название компании"
+                      />
+                      <label class="edit-form__input-title">Тип компании</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Коммерческие</li>
+                            <li class="edit-select__item select__item">Некоммерческие</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title">Сфера деятельности</label>
+                      <div class="edit-select select">
+                        <p class="edit-select__text select__text">Не выбран</p>
+                        <div class="edit-select__wrapper select__wrapper">
+                          <ul class="edit-select__items select__items">
+                            <li class="edit-select__item select__item active">Производство</li>
+                            <li class="edit-select__item select__item">Обмен</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="client-card-edit-phone">Телефон</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" value="+7" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Мобильный</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="client-card-edit-site">Сайт</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-site" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Корпоративный</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Корпоративный</li>
+                              <li class="edit-select__item select__item">Информационный</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-site add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <label class="edit-form__input-title" for="client-card-edit-contact"
+                        >Контакты, связанные с компанией</label
+                      >
+                      <div class="edit-form__input edit-form__box">
+                        <div class="edit-form__box-div">
+                          <img class="edit-form__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                          <input
+                            class="edit-form__input-two"
+                            id="client-card-edit-contact"
+                            type="text"
+                            placeholder="Имя, телефон или E-mail"
+                          />
+                        </div>
+                        <img class="edit-form__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                      </div>
+                      <button class="edit-form__add-contact add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участников
+                      </button>
+                      <p class="edit-form__input-title">ID</p>
+                      <p class="edit-form__id">4</p>
+
+                      <label class="edit-form__input-title" for="client-card-edit-annual-turnover"
+                        >Годовой оборот</label
+                      >
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-annual-turnover" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Российский рубль</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Российский рубль</li>
+                              <li class="edit-select__item select__item">Российский доллар</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="edit-form__input-title" for="client-card-edit-bank-details"
+                        >Банковские реквизиты</label
+                      >
+                      <textarea class="edit-form__input" id="client-card-edit-bank-details" type="text"></textarea>
+                      <label class="edit-form__input-title" for="client-card-edit-email">E-mail</label>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <div class="edit-form__box">
+                        <input class="edit-form__input" id="client-card-edit-phone" type="text" />
+                        <div class="edit-select select">
+                          <p class="edit-select__text select__text active">Рабочий</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Рабочий</li>
+                              <li class="edit-select__item select__item">Рабочий</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <img class="edit-form__delete-icon" src="./src/icons/delete-icon.svg" alt="delete-icon" />
+                      </div>
+                      <button class="edit-form__add-phone add-btn">
+                        <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                      </button>
+                      <div class="edit-form__btns">
+                        <button class="edit-form__btn" id="edit-form__btn">Отменить</button>
+                        <button class="edit-form__btn edit-form__btn_yellow">Сохранить</button>
+                      </div>
+                    </form>
+                    <div class="additionally__content">
+                      <p class="additionally__grey-text">Доступен для всех</p>
+                      <p class="additionally__text">Да</p>
+                      <p class="additionally__grey-text">Участвует в экспорте контактов</p>
+                      <p class="additionally__text"><span class="about__sum">Невалогистик</span></p>
+                      <p class="additionally__grey-text">Ответственный</p>
+                      <p class="additionally__link additionally__responsible">
+                        <picture class="additionally__img">
+                          <source srcset="./src/img/users/user-1.webp" type="image/webp" />
+                          <img src="./src/img/users/user-1.jpg" alt="client-img" />
+                        </picture>
+                        Роман Гудков
+                      </p>
+                      <p class="additionally__grey-text">UTM-метки</p>
+                      <p class="additionally__text" href="#">Отсутствуют</p>
+                    </div>
+                    <div class="additionally__footer">
+                      <button class="additionally__btn additionally__btn_del" id="additionally-delete-btn">
+                        Удалить раздел
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="client-card__box">
+                <div class="client-card__history history">
+                  <h3 class="history__title">История</h3>
+                  <span class="history__date">4 ноября</span>
+                  <ul class="history__items">
+                    <li class="history__item history__item_success">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">
+                        Элемент успешно завершен<span class="history__info-date">12:14</span>
+                      </p>
+                      <p class="history__text">Счёт: <a class="history__link" href="#">test</a></p>
+                    </li>
+                    <li class="history__item history__item_success">
+                      <div class="history__icon-block"></div>
+                      <picture class="history__img-icon">
+                        <source srcset="./src/img/users/user-2.webp" type="image/webp">
+                        <img src="./src/img/users/user-2.jpg" alt="user-icon" />
+                      </picture>
+                      <p class="history__info-text">
+                        Элемент успешно завершен<span class="history__info-date">12:14</span>
+                      </p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">test</a></p>
+                    </li>
+                    <li class="history__item">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:07</span></p>
+                      <p class="history__text">Сделка <a class="history__link" href="#">картриджи</a></p>
                     </li>
                   </ul>
                 </div>
