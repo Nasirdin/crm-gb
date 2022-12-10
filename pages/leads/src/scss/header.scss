@@ -9,31 +9,31 @@
     align-items: center;
   }
   .nav {
+    &__create-plus {
+      display: none;
+      background: url(../icons/plus-bg.svg);
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
     &__item {
       margin-right: 40px;
       position: relative;
-      margin-bottom: 8px;
+      padding: 16px 0 24px 0;
       cursor: pointer;
       &::after {
         display: none;
       }
       &:hover {
-        &::after {
+        .nav__create-plus{
           display: block;
-          content: url(../icons/plus.svg);
-          position: absolute;
-          bottom: -32px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: $yellow-color;
         }
       }
+
       &:nth-child(2) {
         margin-right: 16px;
       }
@@ -45,7 +45,7 @@
         content: "";
         background-color: $yellow-color;
         position: absolute;
-        bottom: -24px;
+        bottom: 0;
       }
     }
     &__item_more {
