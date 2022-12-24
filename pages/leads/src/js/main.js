@@ -198,6 +198,7 @@ const openModalCard = () => {
   const dealCompany = document.querySelectorAll(".deal__company");
   const dealClient = document.querySelectorAll(".deal__client");
   const createDealPlus = document.querySelectorAll(".create-deal-plus");
+  const allWindowBg = document.querySelector(".all-window-bg");
 
   const addActiveCard = (cardLink, card) => {
     cardLink.addEventListener("click", () => {
@@ -211,7 +212,10 @@ const openModalCard = () => {
     addActiveCard(cardLink, clientCard);
   });
   createDealPlus.forEach((cardLink) => {
-    addActiveCard(cardLink, createDealCard);
+    cardLink.addEventListener("click", () => {
+      createDealCard.classList.add("active");
+      allWindowBg.classList.add("active")
+    });
   });
   companyCardClose.addEventListener("click", () => {
     companyCard.classList.remove("active");
@@ -228,7 +232,8 @@ openModalCard();
 const openEditModal = () => {
   const companyAboutEditBtns = document.querySelectorAll(".company-about-edit-btn");
   const clientAboutEditBtns = document.querySelectorAll(".client-about-edit-btn");
-  const aboutEditBtnsTwo = document.querySelectorAll(".edit-form__btn");
+  const cancelCompanyEditFormBtn = document.getElementById("cancel-company-edit-form-btn");
+  const cancelClientEditFormBtn = document.getElementById("cancel-client-edit-form-btn");
   const companyAboutCancelBtns = document.querySelectorAll(".company-about-cancel-btn");
   const clientAboutCancelBtns = document.querySelectorAll(".client-about-cancel-btn");
   const aboutDeleteBtns = document.querySelectorAll(".about-delete-btn");
@@ -313,19 +318,18 @@ const openEditModal = () => {
       removeClassActive(cardBoxes);
     });
   });
-  aboutEditBtnsTwo.forEach((aboutEditBtnTwo) => {
-    aboutEditBtnTwo.addEventListener("click", (e) => {
-      e.preventDefault();
-      clickEditBtnTwo(
-        companyAboutEditBtns,
-        companyAboutCancelBtns,
-        aboutContents,
-        allWindowBg,
-        abouts,
-        aboutDeleteBtns
-      );
-      companyAboutEditForm.classList.remove("active");
-    });
+
+  cancelCompanyEditFormBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    clickEditBtnTwo(companyAboutEditBtns, companyAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+    companyAboutEditForm.classList.remove("active");
+    removeClassActive(cardBoxes);
+  });
+  cancelClientEditFormBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    clickEditBtnTwo(clientAboutEditBtns, clientAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+    clientAboutEditForm.classList.remove("active");
+    removeClassActive(cardBoxes);
   });
 };
 openEditModal();

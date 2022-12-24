@@ -131,6 +131,21 @@ h6 {
   text-align: left;
 }
 
+.borderless-btn {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #99a2ad !important;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.borderless-btn.red-btn {
+  color: #ff0c0c !important;
+}
+
 @media (max-width: 900px) {
   .title {
     font-size: 24px;
@@ -180,7 +195,7 @@ h6 {
   position: relative;
 }
 .select__text {
-  padding: 10px 15px;
+  padding: 9px 15px;
   padding-right: 36px;
   border-radius: 6px;
   line-height: 20px;

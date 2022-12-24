@@ -1,7 +1,9 @@
 // global CSS
 @import "grandbazar";
 @import "header";
+@import "leads-content";
 @import "kanban-grid";
+
 .wrapper {
   display: flex;
   justify-content: flex-start;
@@ -36,393 +38,22 @@
   padding-bottom: 0;
   position: relative;
 }
-.content {
-  &__header {
-    display: flex;
-    justify-content: flex-end center;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  .content-header {
-    &__items {
-      padding: 12px 5px;
-      border-radius: 6px;
-      background-color: $white-color;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      &:first-child {
-        margin-right: 30px;
-      }
-    }
-    &__item {
-      padding: 0 15px;
-      display: flex;
-      justify-content: space-between;
-    }
-    &__link {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 20px;
-    }
-    &__link.active {
-      position: relative;
-      &::after {
-        background: $yellow-color;
-        border-radius: 8px;
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 0;
-        height: 3px;
-        width: 100%;
-      }
-    }
-    &__span {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $yellow-color;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 20px;
-      margin-right: 8px;
-    }
-    .second-item {
-      border-right: 1px solid #000;
-      &:first-child {
-        padding-right: 5px;
-        border: none;
-      }
-      &:last-child {
-        border: none;
-      }
-    }
-    &__text {
-      font-weight: 500;
-    }
-  }
-  .kanban {
-    display: flex;
-    justify-content: flex-start;
-    align-items: start;
-    &__item {
-      width: 280px;
-      margin-right: 20px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    &__header {
-      position: relative;
-      padding: 10px 22px;
-      border-radius: 6px;
-      background-color: $white-color;
-      border: 0.5px solid $lightGrey-color-three;
-    }
-    &__color-span {
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      height: calc(100% + 2px);
-      width: 7px;
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-    }
-    &__title {
-      font-size: 14px;
-    }
-    .create-deal {
-      padding: 15px;
-      border: 1px solid $lightGrey-color-three;
-      border-radius: 6px;
-      background-color: $white-color;
-      margin-bottom: 30px;
-      display: none;
-      &__titles {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 4px;
-        margin-top: 15px;
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-      &__label {
-        display: block;
-        padding: 10px 15px;
-        border-radius: 6px;
-        border: 0.5px solid $lightGrey-color-three;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      &__input {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        width: 100%;
-        border: none;
-        outline: none;
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-          appearance: none;
-          margin: 0;
-        }
-      }
-      &__icon-one {
-        padding-right: 13px;
-        margin-right: 16px;
-        border-right: 1px solid $lightGrey-color-three;
-      }
-      &__icon {
-        cursor: pointer;
-      }
-      &__btns {
-        margin-top: 20px;
-      }
-      &__btn {
-        padding: 10px 26px;
-        outline: none;
-        background-color: $yellow-color;
-        border: none;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        cursor: pointer;
-      }
-      &__btn_white {
-        background-color: $white-color;
-      }
-      &__sum {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        label {
-          max-width: 167px;
-          margin-right: 6px;
-          margin-bottom: 0;
-        }
-      }
-      &__currency {
-        width: 61px;
-      }
-    }
-    .create-deal.active {
-      display: block;
-    }
-    &__content {
-      border: 1px dashed $lightGrey-color-four;
-      border-top: none;
-      padding: 20px 8px;
-      height: calc(100vh - 345px);
-      overflow: scroll;
-      &::-webkit-scrollbar {
-        width: 0;
-      }
-    }
-    &__all-money {
-      text-align: center;
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 26px;
-      margin-bottom: 20px;
-    }
-    &__currency {
-      margin-left: 5px;
-    }
-    &__create-btn {
-      background-color: $white-color;
-      border: none;
-      border: 0.5px solid $lightGrey-color-three;
-      padding: 9px;
-      width: 100%;
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 700;
-      border-radius: 6px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 30px;
-      cursor: pointer;
-    }
-    &__btn-plus {
-      width: 12px;
-      height: 12px;
-      margin-right: 10px;
-      position: relative;
-      display: block;
-      &::after,
-      &::before {
-        width: 1px;
-        height: 100%;
-        background-color: #000;
-        border-radius: 1px;
-        content: "";
-        position: absolute;
-        top: 0;
-      }
-      &::after {
-        transform: rotate(90deg);
-      }
-    }
-    .big-plus {
-      background: none;
-      border: none;
-      span {
-        width: 15px;
-        height: 15px;
-      }
-    }
-    &__create-btn.active {
-      background-color: $yellow-color;
-      border: 0.5px solid $yellow-color;
-    }
-    &__deals {
-      width: 100%;
-      height: 100%;
-    }
-    .drag-enter {
-      background-color: $lightGrey-color-three;
-    }
-    .deal {
-      background-color: $white-color;
-      border-radius: 6px;
-      border: 0.5px solid $lightGrey-color-three;
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      padding: 10px 15px 10px 20px;
-      position: relative;
-      margin-bottom: 30px;
-      cursor: grab;
-      &::before {
-        width: 4px;
-        height: calc(100% - 20px);
-        border-radius: 6px;
-        left: -1px;
-        top: 10px;
-        content: "";
-        position: absolute;
-      }
-      a {
-        cursor: pointer;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-      &__content {
-        display: flex;
-        flex-direction: column;
-      }
-      &__title {
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-      &__sum-block {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-      &__price {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        margin-right: 3px;
-      }
-      &__client,
-      &__company {
-        color: $inWork-color;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-      }
-      &__company {
-        margin-bottom: 10px;
-      }
-      &__date {
-        margin-bottom: 40px;
-      }
-
-      &__plus-btn {
-        border: none;
-        background: none;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        line-height: 20px;
-        cursor: pointer;
-        img {
-          margin-right: 10px;
-        }
-      }
-      &__info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        li {
-          line-height: 0px;
-        }
-      }
-      &__amount {
-        width: 20px;
-        height: 20px;
-        background-color: $yellow-color;
-        font-weight: 700;
-        font-size: 12px;
-        margin-bottom: 14px;
-        line-height: 16px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      &__tel {
-        margin-bottom: 18px;
-      }
-    }
-    &__new {
-      .deal {
-        &::before {
-          background-color: $yellow-color;
-        }
-      }
-    }
-    &__in-work {
-      .deal {
-        &::before {
-          background-color: $inWork-color;
-        }
-      }
-    }
-    &__failed {
-      .deal {
-        &::before {
-          background-color: $failed-color;
-        }
-      }
-    }
-    &__success {
-      .deal {
-        &::before {
-          background-color: $success-color;
-        }
-      }
-    }
-  }
-}
-
 .hide {
   display: none !important;
+}
+.all-window-bg {
+  display: none;
+}
+.all-window-bg.active {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: rgba(22, 22, 22, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 20px;
 }
 
 .company-card,
@@ -523,7 +154,7 @@
   &__box {
     width: 50%;
     height: 100%;
-    // overflow-y: scroll;
+    overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 0;
     }
@@ -535,9 +166,9 @@
       padding-left: 30px;
     }
   }
-
-
-
+  &__box.active {
+    overflow-y: initial;
+  }
   .about,
   .additionally,
   .history {
@@ -546,6 +177,7 @@
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid $lightGrey-color-three;
+    position: relative;
     &__header {
       display: flex;
       justify-content: space-between;
@@ -553,6 +185,7 @@
       border-bottom: 1px solid $lightGrey-color-three;
       padding-bottom: 12px;
       margin-bottom: 15px;
+      width: 100%;
     }
     &__title-block {
       display: flex;
@@ -597,19 +230,6 @@
     &__img {
       margin-right: 10px;
     }
-    &__btn {
-      background: none;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: $grey-color;
-      line-height: 20px;
-      cursor: pointer;
-    }
-    &__btn_del {
-      color: $failed-color;
-    }
     &__footer {
       display: flex;
       justify-content: flex-end;
@@ -640,16 +260,26 @@
       padding: 9px 15px;
       outline: none;
       border-radius: 6px;
-      border: 1px solid $lightGrey-color-four;
+      border: 1px solid $lightGrey-color-three;
       width: 100%;
       max-width: 100%;
       margin-bottom: 15px;
       line-height: 20px;
+      font-size: 14px;
       &::placeholder {
         font-weight: bold;
         color: $lightGrey-color-four;
       }
     }
+    &__input::placeholder {
+      color: $grey-color;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    &__input_date {
+      width: 200px;
+    }
+
     .edit-select {
       width: 100%;
       margin-bottom: 15px;
@@ -657,9 +287,9 @@
         padding: 6px 24px;
       }
       &__text {
-        color: $lightGrey-color-four;
+        color: $grey-color;
         font-weight: 500;
-        border: 1px solid $lightGrey-color-four;
+        border: 1px solid $lightGrey-color-three;
       }
       &__text.active {
         color: $dark-color;
@@ -681,7 +311,7 @@
         margin-left: 15px;
         margin-bottom: 0;
         &__text {
-          border: 1px solid $lightGrey-color-four;
+          border: 1px solid $lightGrey-color-three;
         }
       }
       input {
@@ -692,6 +322,22 @@
         display: flex;
         align-items: center;
       }
+      button {
+        background: none;
+        outline: none;
+        color: $inWork-color;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        line-height: 20px;
+      }
+    }
+    .mb-30 {
+      margin-bottom: 30px;
+    }
+    .second-header {
+      padding-bottom: 0;
+      margin-bottom: 13px;
     }
     &__input-two {
       width: 100%;
@@ -699,6 +345,11 @@
       border: none;
       outline: none;
       background: none;
+      &::placeholder{
+        color: #99a2ad;
+        font-weight: 500;
+        font-size: 14px;
+      }
     }
     &__icon-one {
       padding-right: 13px;
@@ -737,6 +388,8 @@
       outline: none;
       color: $grey-color;
       font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
       cursor: pointer;
     }
     &__btn_yellow {
@@ -789,6 +442,7 @@
         border-radius: 6px;
         left: -1px;
         top: 10px;
+        z-index: 1;
         content: "";
         position: absolute;
       }
@@ -874,27 +528,51 @@
       }
     }
   }
-  #about-delete-btn.active {
+  .about-delete-btn.active {
     color: $failed-color;
   }
 }
 
+.create-deal-card{
+  .about{
+    z-index: 1;
+  }
+  .edit-form__btns{
+  width: 100% !important;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  }
+}
+
+.responsible {
+  &__img {
+    margin-right: 14px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__user {
+    color: $inWork-color;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+.create-deal-card {
+  .about__max-content {
+    max-height: auto;
+    overflow-y: initial;
+  }
+}
 .company-card.active,
 .client-card.active,
 .create-deal-card.active {
   display: block;
 }
-.all-window-bg {
-  display: none;
-}
-.all-window-bg.active {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  background: rgba(22, 22, 22, 0.1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: 20px;
-}
+

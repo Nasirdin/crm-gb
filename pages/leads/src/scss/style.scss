@@ -169,7 +169,6 @@
   &__box.active {
     overflow-y: initial;
   }
-
   .about,
   .additionally,
   .history {
@@ -178,6 +177,7 @@
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid $lightGrey-color-three;
+    position: relative;
     &__header {
       display: flex;
       justify-content: space-between;
@@ -229,19 +229,6 @@
     }
     &__img {
       margin-right: 10px;
-    }
-    &__btn {
-      background: none;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: $grey-color;
-      line-height: 20px;
-      cursor: pointer;
-    }
-    &__btn_del {
-      color: $failed-color;
     }
     &__footer {
       display: flex;
@@ -345,10 +332,10 @@
         line-height: 20px;
       }
     }
-    .mb-30{
+    .mb-30 {
       margin-bottom: 30px;
     }
-    .second-header{
+    .second-header {
       padding-bottom: 0;
       margin-bottom: 13px;
     }
@@ -358,6 +345,11 @@
       border: none;
       outline: none;
       background: none;
+      &::placeholder{
+        color: #99a2ad;
+        font-weight: 500;
+        font-size: 14px;
+      }
     }
     &__icon-one {
       padding-right: 13px;
@@ -396,6 +388,8 @@
       outline: none;
       color: $grey-color;
       font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
       cursor: pointer;
     }
     &__btn_yellow {
@@ -448,6 +442,7 @@
         border-radius: 6px;
         left: -1px;
         top: 10px;
+        z-index: 1;
         content: "";
         position: absolute;
       }
@@ -539,14 +534,45 @@
 }
 
 .create-deal-card{
+  .about{
+    z-index: 1;
+  }
+  .edit-form__btns{
+  width: 100% !important;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  }
+}
+
+.responsible {
+  &__img {
+    margin-right: 14px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__user {
+    color: $inWork-color;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+.create-deal-card {
   .about__max-content {
     max-height: auto;
     overflow-y: initial;
   }
 }
-
 .company-card.active,
 .client-card.active,
 .create-deal-card.active {
   display: block;
 }
+

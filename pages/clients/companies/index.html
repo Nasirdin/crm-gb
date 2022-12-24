@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM - GB</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navigation"></nav>
+      <div class="global-content">
+        <div class="header">
+          <ul class="header__nav nav">
+            <li class="nav__item">
+              <a href="../../leads/index.html" class="nav__link">Лиды</a><span class="nav__create-plus"></span>
+            </li>
+            <li class="nav__item">
+              <a href="../../deals/index.html" class="nav__link">Сделки</a
+              ><span class="nav__create-plus create-deal-plus"></span>
+            </li>
+            <li class="nav__item_more">
+              <a href="#" class="nav__link nav__link_more">Товары и склады</a>
+              <ul class="nav__second-items nav__second-items_one second-nav">
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Каталог товаров</a></li>
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Складской учет</a></li>
+              </ul>
+            </li>
+            <li class="nav__item_more">
+              <a href="#" class="nav__link nav__link_more active">Клиенты</a>
+              <ul class="nav__second-items nav__second-items_two second-nav">
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Контакты</a></li>
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Компании</a></li>
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Контакт-центр</a></li>
+              </ul>
+            </li>
+            <li class="nav__item_more">
+              <a href="#" class="nav__link nav__link_more">Продажи</a>
+              <ul class="nav__second-items nav__second-items_three second-nav">
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Счета</a></li>
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Предложения</a></li>
+                <li class="second-nav__item"><a href="#" class="second-nav__link">Центр продаж</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="second-header">
+          <h2 class="second-header__title">Компании</h2>
+          <ul class="second-header__btns">
+            <li class="second-header__btn second-header__create">Создать</li>
+            <li class="second-header__btn second-header__arrow">
+              <img class="second-header__btn-img" src="./src/icons/arrowToDown.svg" alt="arrow-icon" />
+              <div class="second-header__btn-wrapper">
+                <ul class="second-header__second-select-btn second-select-btn">
+                  <li class="second-select-btn__item active">Создать сделку</li>
+                  <li class="second-select-btn__item">Генератор продаж</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form class="second-header__search-form">
+            <label><input class="second-header__search-input" type="text" placeholder="Поиск" /></label>
+            <button class="second-header__search-btn"><img src="./src/icons//search.svg" alt="search-icon" /></button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="content__header content-header">
+            <ul class="content-header__items">
+              <li class="content-header__item second-item"><span class="content-header__span-text">Мои:</span></li>
+              <li class="content-header__item second-item">
+                <span class="content-header__span">0</span>
+                <p class="content-header__text">Входящие</p>
+              </li>
+              <li class="content-header__item second-item">
+                <span class="content-header__span">0</span>
+                <p class="content-header__text">Запланированные</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tabel">
+            <div class="tabel__header">
+              <div class="tabel__first-block">
+                <span class="tabel__all-mark"></span>
+                <p class="tabel__title default-text tabel__arrow-text">Компания</p>
+              </div>
+              <p class="tabel__title default-text">Дела</p>
+              <p class="tabel__title default-text">Отвественный</p>
+              <p class="tabel__title default-text">Дата создания</p>
+            </div>
+            <ul class="tabel__rows">
+              <li class="tabel__row row-company">
+                <div class="tabel__first-block">
+                  <span class="row-company__mark"></span>
+                  <span class="row-company__menu"></span>
+                  <div class="row-company__icon"><img src="./src/icons/users-icon.svg" alt="icon" /></div>
+                  <a class="row-company__name link">ВТК МСК</a>
+                </div>
+                <p class="row-company__text row-company__affairs default-text grey-text">Дела отсутствуют</p>
+                <a class="row-company__responsible link">Роман Гудков</a>
+                <p class="row-company__text row-company__date-create default-text grey-text">04.11.2022</p>
+              </li>
+              <li class="tabel__row row-company">
+                <div class="tabel__first-block">
+                  <span class="row-company__mark"></span>
+                  <span class="row-company__menu"></span>
+                  <div class="row-company__icon"><img src="./src/icons/users-icon.svg" alt="icon" /></div>
+                  <a class="row-company__name link">ВТК МСК</a>
+                </div>
+                <p class="row-company__text row-company__affairs default-text grey-text">Дела отсутствуют</p>
+                <a class="row-company__responsible link">Роман Гудков</a>
+                <p class="row-company__text row-company__date-create default-text grey-text">04.11.2022</p>
+              </li>
+            </ul>
+            <div class="tabel__footer footer">
+              <div class="footer__first-block">
+                <p class="footer__title default-text">Отмечено: <span class="tabel__noted">0/2</span></p>
+                <p class="footer__title default-text">Всего: <span class="tabel__total">2</span></p>
+                <p class="footer__title default-text">Страницы: <span class="tabel__page">1</span></p>
+              </div>
+              <div class="footer__page-block">
+                <p class="footer__title default-text">На странице:</p>
+                <div class="footer__page-btn"><p class="footer__page-amount">20</p></div>
+              </div>
+            </div>
+            <div class="tabel__btns">
+              <button class="tabel__btn"><img src="./src/icons/delete-icon.svg" alt=""> Удалить</button>
+              <button class="tabel__btn"><img src="./src/icons/editIcon.svg" alt=""> Редактировать</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/main.js"></script>
+  </body>
+</html>

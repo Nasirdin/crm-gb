@@ -132,6 +132,19 @@ h6 {
   border-bottom: 0.5px solid $lightGrey-color-three;
   text-align: left;
 }
+.borderless-btn {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $grey-color !important;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.borderless-btn.red-btn {
+  color: $failed-color !important;
+}
 
 @media (max-width: 900px) {
   .title {

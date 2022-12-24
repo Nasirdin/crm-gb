@@ -131,6 +131,21 @@ h6 {
   text-align: left;
 }
 
+.borderless-btn {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #99a2ad !important;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.borderless-btn.red-btn {
+  color: #ff0c0c !important;
+}
+
 @media (max-width: 900px) {
   .title {
     font-size: 24px;
@@ -180,7 +195,7 @@ h6 {
   position: relative;
 }
 .select__text {
-  padding: 10px 15px;
+  padding: 9px 15px;
   padding-right: 36px;
   border-radius: 6px;
   line-height: 20px;
@@ -584,46 +599,6 @@ h6 {
   cursor: pointer;
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.add-btn {
-  cursor: pointer;
-  background: none;
-  outline: none;
-  border: none;
-  color: #99a2ad;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-  margin-top: 8px;
-}
-.add-btn img {
-  margin-right: 5px;
-}
-
-.navigation {
-  min-width: 340px;
-  height: 100vh;
-  background-color: #161616;
-}
-
-.global-content {
-  width: calc(100% - 340px);
-  width: 100%;
-  padding: 30px;
-  padding-bottom: 0;
-  position: relative;
-}
-
 .content__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -712,7 +687,8 @@ h6 {
 .content .content-header__text {
   font-weight: 500;
 }
-.content .kanban {
+
+.kanban {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -723,21 +699,21 @@ h6 {
       -ms-flex-align: start;
           align-items: start;
 }
-.content .kanban__item {
+.kanban__item {
   width: 280px;
   margin-right: 20px;
 }
-.content .kanban__item:last-child {
+.kanban__item:last-child {
   margin-right: 0;
 }
-.content .kanban__header {
+.kanban__header {
   position: relative;
   padding: 10px 22px;
   border-radius: 6px;
   background-color: #fff;
   border: 0.5px solid #dddcdc;
 }
-.content .kanban__color-span {
+.kanban__color-span {
   position: absolute;
   left: -1px;
   top: -1px;
@@ -746,10 +722,10 @@ h6 {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-.content .kanban__title {
+.kanban__title {
   font-size: 14px;
 }
-.content .kanban .create-deal {
+.kanban .create-deal {
   padding: 15px;
   border: 1px solid #dddcdc;
   border-radius: 6px;
@@ -757,17 +733,17 @@ h6 {
   margin-bottom: 30px;
   display: none;
 }
-.content .kanban .create-deal__titles {
+.kanban .create-deal__titles {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 4px;
   margin-top: 15px;
 }
-.content .kanban .create-deal__titles:first-child {
+.kanban .create-deal__titles:first-child {
   margin-top: 0;
 }
-.content .kanban .create-deal__label {
+.kanban .create-deal__label {
   display: block;
   padding: 10px 15px;
   border-radius: 6px;
@@ -783,7 +759,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .kanban .create-deal__input {
+.kanban .create-deal__input {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -791,23 +767,23 @@ h6 {
   border: none;
   outline: none;
 }
-.content .kanban .create-deal__input::-webkit-inner-spin-button, .content .kanban .create-deal__input::-webkit-outer-spin-button {
+.kanban .create-deal__input::-webkit-inner-spin-button, .kanban .create-deal__input::-webkit-outer-spin-button {
   -webkit-appearance: none;
           appearance: none;
   margin: 0;
 }
-.content .kanban .create-deal__icon-one {
+.kanban .create-deal__icon-one {
   padding-right: 13px;
   margin-right: 16px;
   border-right: 1px solid #dddcdc;
 }
-.content .kanban .create-deal__icon {
+.kanban .create-deal__icon {
   cursor: pointer;
 }
-.content .kanban .create-deal__btns {
+.kanban .create-deal__btns {
   margin-top: 20px;
 }
-.content .kanban .create-deal__btn {
+.kanban .create-deal__btn {
   padding: 10px 26px;
   outline: none;
   background-color: #ffdc00;
@@ -818,10 +794,10 @@ h6 {
   line-height: 20px;
   cursor: pointer;
 }
-.content .kanban .create-deal__btn_white {
+.kanban .create-deal__btn_white {
   background-color: #fff;
 }
-.content .kanban .create-deal__sum {
+.kanban .create-deal__sum {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -832,38 +808,38 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .kanban .create-deal__sum label {
+.kanban .create-deal__sum label {
   max-width: 167px;
   margin-right: 6px;
   margin-bottom: 0;
 }
-.content .kanban .create-deal__currency {
+.kanban .create-deal__currency {
   width: 61px;
 }
-.content .kanban .create-deal.active {
+.kanban .create-deal.active {
   display: block;
 }
-.content .kanban__content {
+.kanban__content {
   border: 1px dashed #c4c4c4;
   border-top: none;
   padding: 20px 8px;
   height: calc(100vh - 345px);
   overflow: scroll;
 }
-.content .kanban__content::-webkit-scrollbar {
+.kanban__content::-webkit-scrollbar {
   width: 0;
 }
-.content .kanban__all-money {
+.kanban__all-money {
   text-align: center;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
   margin-bottom: 20px;
 }
-.content .kanban__currency {
+.kanban__currency {
   margin-left: 5px;
 }
-.content .kanban__create-btn {
+.kanban__create-btn {
   background-color: #fff;
   border: none;
   border: 0.5px solid #dddcdc;
@@ -885,14 +861,14 @@ h6 {
   margin-bottom: 30px;
   cursor: pointer;
 }
-.content .kanban__btn-plus {
+.kanban__btn-plus {
   width: 12px;
   height: 12px;
   margin-right: 10px;
   position: relative;
   display: block;
 }
-.content .kanban__btn-plus::after, .content .kanban__btn-plus::before {
+.kanban__btn-plus::after, .kanban__btn-plus::before {
   width: 1px;
   height: 100%;
   background-color: #000;
@@ -901,30 +877,30 @@ h6 {
   position: absolute;
   top: 0;
 }
-.content .kanban__btn-plus::after {
+.kanban__btn-plus::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.content .kanban .big-plus {
+.kanban .big-plus {
   background: none;
   border: none;
 }
-.content .kanban .big-plus span {
+.kanban .big-plus span {
   width: 15px;
   height: 15px;
 }
-.content .kanban__create-btn.active {
+.kanban__create-btn.active {
   background-color: #ffdc00;
   border: 0.5px solid #ffdc00;
 }
-.content .kanban__deals {
+.kanban__deals {
   width: 100%;
   height: 100%;
 }
-.content .kanban .drag-enter {
+.kanban .drag-enter {
   background-color: #dddcdc;
 }
-.content .kanban .deal {
+.kanban .deal {
   background-color: #fff;
   border-radius: 6px;
   border: 0.5px solid #dddcdc;
@@ -943,7 +919,7 @@ h6 {
   cursor: -webkit-grab;
   cursor: grab;
 }
-.content .kanban .deal::before {
+.kanban .deal::before {
   width: 4px;
   height: calc(100% - 20px);
   border-radius: 6px;
@@ -952,13 +928,13 @@ h6 {
   content: "";
   position: absolute;
 }
-.content .kanban .deal a {
+.kanban .deal a {
   cursor: pointer;
 }
-.content .kanban .deal:last-child {
+.kanban .deal:last-child {
   margin-bottom: 0;
 }
-.content .kanban .deal__content {
+.kanban .deal__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -967,11 +943,11 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.content .kanban .deal__title {
+.kanban .deal__title {
   font-size: 14px;
   margin-bottom: 10px;
 }
-.content .kanban .deal__sum-block {
+.kanban .deal__sum-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -983,25 +959,25 @@ h6 {
           align-items: center;
   margin-bottom: 10px;
 }
-.content .kanban .deal__price {
+.kanban .deal__price {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   margin-right: 3px;
 }
-.content .kanban .deal__client, .content .kanban .deal__company {
+.kanban .deal__client, .kanban .deal__company {
   color: #007bfb;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }
-.content .kanban .deal__company {
+.kanban .deal__company {
   margin-bottom: 10px;
 }
-.content .kanban .deal__date {
+.kanban .deal__date {
   margin-bottom: 40px;
 }
-.content .kanban .deal__plus-btn {
+.kanban .deal__plus-btn {
   border: none;
   background: none;
   font-size: 14px;
@@ -1017,10 +993,10 @@ h6 {
   line-height: 20px;
   cursor: pointer;
 }
-.content .kanban .deal__plus-btn img {
+.kanban .deal__plus-btn img {
   margin-right: 10px;
 }
-.content .kanban .deal__info {
+.kanban .deal__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1032,10 +1008,10 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .kanban .deal__info li {
+.kanban .deal__info li {
   line-height: 0px;
 }
-.content .kanban .deal__amount {
+.kanban .deal__amount {
   width: 20px;
   height: 20px;
   background-color: #ffdc00;
@@ -1054,24 +1030,80 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .kanban .deal__tel {
+.kanban .deal__tel {
   margin-bottom: 18px;
 }
-.content .kanban__new .deal::before {
+.kanban__new .deal::before {
   background-color: #ffdc00;
 }
-.content .kanban__in-work .deal::before {
+.kanban__in-work .deal::before {
   background-color: #007bfb;
 }
-.content .kanban__failed .deal::before {
+.kanban__failed .deal::before {
   background-color: #ff0c0c;
 }
-.content .kanban__success .deal::before {
+.kanban__success .deal::before {
   background-color: #00d359;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.add-btn {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  color: #99a2ad;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 8px;
+}
+.add-btn img {
+  margin-right: 5px;
+}
+
+.navigation {
+  min-width: 340px;
+  height: 100vh;
+  background-color: #161616;
+}
+
+.global-content {
+  width: calc(100% - 340px);
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 0;
+  position: relative;
 }
 
 .hide {
   display: none !important;
+}
+
+.all-window-bg {
+  display: none;
+}
+
+.all-window-bg.active {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: rgba(22, 22, 22, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 20px;
 }
 
 .company-card,
@@ -1211,6 +1243,7 @@ h6 {
 .create-deal-card__box {
   width: 50%;
   height: 100%;
+  overflow-y: scroll;
 }
 .company-card__box::-webkit-scrollbar,
 .client-card__box::-webkit-scrollbar,
@@ -1228,6 +1261,11 @@ h6 {
 .create-deal-card__box:last-child {
   padding-left: 30px;
 }
+.company-card__box.active,
+.client-card__box.active,
+.create-deal-card__box.active {
+  overflow-y: initial;
+}
 .company-card .about,
 .company-card .additionally,
 .company-card .history,
@@ -1242,6 +1280,7 @@ h6 {
   border-radius: 8px;
   margin-bottom: 20px;
   border: 1px solid #dddcdc;
+  position: relative;
 }
 .company-card .about__header,
 .company-card .additionally__header,
@@ -1264,6 +1303,7 @@ h6 {
   border-bottom: 1px solid #dddcdc;
   padding-bottom: 12px;
   margin-bottom: 15px;
+  width: 100%;
 }
 .company-card .about__title-block,
 .company-card .additionally__title-block,
@@ -1381,35 +1421,6 @@ h6 {
 .create-deal-card .history__img {
   margin-right: 10px;
 }
-.company-card .about__btn,
-.company-card .additionally__btn,
-.company-card .history__btn,
-.client-card .about__btn,
-.client-card .additionally__btn,
-.client-card .history__btn,
-.create-deal-card .about__btn,
-.create-deal-card .additionally__btn,
-.create-deal-card .history__btn {
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #99a2ad;
-  line-height: 20px;
-  cursor: pointer;
-}
-.company-card .about__btn_del,
-.company-card .additionally__btn_del,
-.company-card .history__btn_del,
-.client-card .about__btn_del,
-.client-card .additionally__btn_del,
-.client-card .history__btn_del,
-.create-deal-card .about__btn_del,
-.create-deal-card .additionally__btn_del,
-.create-deal-card .history__btn_del {
-  color: #ff0c0c;
-}
 .company-card .about__footer,
 .company-card .additionally__footer,
 .company-card .history__footer,
@@ -1477,11 +1488,12 @@ h6 {
   padding: 9px 15px;
   outline: none;
   border-radius: 6px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #dddcdc;
   width: 100%;
   max-width: 100%;
   margin-bottom: 15px;
   line-height: 20px;
+  font-size: 14px;
 }
 .company-card .edit-form__input::-webkit-input-placeholder, .client-card .edit-form__input::-webkit-input-placeholder, .create-deal-card .edit-form__input::-webkit-input-placeholder {
   font-weight: bold;
@@ -1505,6 +1517,38 @@ h6 {
   font-weight: bold;
   color: #c4c4c4;
 }
+.company-card .edit-form__input::-webkit-input-placeholder, .client-card .edit-form__input::-webkit-input-placeholder, .create-deal-card .edit-form__input::-webkit-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input::-moz-placeholder, .client-card .edit-form__input::-moz-placeholder, .create-deal-card .edit-form__input::-moz-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input:-ms-input-placeholder, .client-card .edit-form__input:-ms-input-placeholder, .create-deal-card .edit-form__input:-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input::-ms-input-placeholder, .client-card .edit-form__input::-ms-input-placeholder, .create-deal-card .edit-form__input::-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input::placeholder,
+.client-card .edit-form__input::placeholder,
+.create-deal-card .edit-form__input::placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input_date,
+.client-card .edit-form__input_date,
+.create-deal-card .edit-form__input_date {
+  width: 200px;
+}
 .company-card .edit-form .edit-select,
 .client-card .edit-form .edit-select,
 .create-deal-card .edit-form .edit-select {
@@ -1519,9 +1563,9 @@ h6 {
 .company-card .edit-form .edit-select__text,
 .client-card .edit-form .edit-select__text,
 .create-deal-card .edit-form .edit-select__text {
-  color: #c4c4c4;
+  color: #99a2ad;
   font-weight: 500;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #dddcdc;
 }
 .company-card .edit-form .edit-select__text.active,
 .client-card .edit-form .edit-select__text.active,
@@ -1560,7 +1604,7 @@ h6 {
 .company-card .edit-form__box .select__text,
 .client-card .edit-form__box .select__text,
 .create-deal-card .edit-form__box .select__text {
-  border: 1px solid #c4c4c4;
+  border: 1px solid #dddcdc;
 }
 .company-card .edit-form__box input,
 .client-card .edit-form__box input,
@@ -1578,6 +1622,28 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
+.company-card .edit-form__box button,
+.client-card .edit-form__box button,
+.create-deal-card .edit-form__box button {
+  background: none;
+  outline: none;
+  color: #007bfb;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  line-height: 20px;
+}
+.company-card .edit-form .mb-30,
+.client-card .edit-form .mb-30,
+.create-deal-card .edit-form .mb-30 {
+  margin-bottom: 30px;
+}
+.company-card .edit-form .second-header,
+.client-card .edit-form .second-header,
+.create-deal-card .edit-form .second-header {
+  padding-bottom: 0;
+  margin-bottom: 13px;
+}
 .company-card .edit-form__input-two,
 .client-card .edit-form__input-two,
 .create-deal-card .edit-form__input-two {
@@ -1586,6 +1652,33 @@ h6 {
   border: none;
   outline: none;
   background: none;
+}
+.company-card .edit-form__input-two::-webkit-input-placeholder, .client-card .edit-form__input-two::-webkit-input-placeholder, .create-deal-card .edit-form__input-two::-webkit-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::-moz-placeholder, .client-card .edit-form__input-two::-moz-placeholder, .create-deal-card .edit-form__input-two::-moz-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two:-ms-input-placeholder, .client-card .edit-form__input-two:-ms-input-placeholder, .create-deal-card .edit-form__input-two:-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::-ms-input-placeholder, .client-card .edit-form__input-two::-ms-input-placeholder, .create-deal-card .edit-form__input-two::-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::placeholder,
+.client-card .edit-form__input-two::placeholder,
+.create-deal-card .edit-form__input-two::placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
 }
 .company-card .edit-form__icon-one,
 .client-card .edit-form__icon-one,
@@ -1645,6 +1738,8 @@ h6 {
   outline: none;
   color: #99a2ad;
   font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
   cursor: pointer;
 }
 .company-card .edit-form__btn_yellow,
@@ -1719,6 +1814,7 @@ h6 {
   border-radius: 6px;
   left: -1px;
   top: 10px;
+  z-index: 1;
   content: "";
   position: absolute;
 }
@@ -1828,30 +1924,47 @@ h6 {
 .create-deal-card .history__item_success .history__icon-block::before {
   content: url(../icons/success-icon.svg);
 }
-.company-card #about-delete-btn.active,
-.client-card #about-delete-btn.active,
-.create-deal-card #about-delete-btn.active {
+.company-card .about-delete-btn.active,
+.client-card .about-delete-btn.active,
+.create-deal-card .about-delete-btn.active {
   color: #ff0c0c;
+}
+
+.create-deal-card .about {
+  z-index: 1;
+}
+.create-deal-card .edit-form__btns {
+  width: 100% !important;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.responsible__img {
+  margin-right: 14px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+.responsible__img img {
+  width: 100%;
+  height: 100%;
+}
+.responsible__user {
+  color: #007bfb;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.create-deal-card .about__max-content {
+  max-height: auto;
+  overflow-y: initial;
 }
 
 .company-card.active,
 .client-card.active,
 .create-deal-card.active {
   display: block;
-}
-
-.all-window-bg {
-  display: none;
-}
-
-.all-window-bg.active {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  background: rgba(22, 22, 22, 0.1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: 20px;
 }

@@ -36,224 +36,300 @@ secondHeaderSecoundItem.forEach((item) => {
 
 // kanban
 
-const calculateAllSum = () => {
-  const dealAllMoneyNew = document.getElementById("deal-all-money-new");
-  const dealAllMoneyFailed = document.getElementById("deal-all-money-failed");
-  const dealAllMoneyinWork = document.getElementById("deal-all-money-in-work");
-  const dealAllMoneySuccess = document.getElementById("deal-all-money-success");
-  const dealsPriceNew = document.querySelectorAll(".deals-new");
-  const dealsPriceFailed = document.querySelectorAll(".deals-failed");
-  const dealsPriceinWork = document.querySelectorAll(".deals-in-work");
-  const dealsPriceSuccess = document.querySelectorAll(".deals-success");
-  const kanbanAllMoney = document.querySelectorAll(".kanban__all-money");
-  const dealPrice = document.querySelectorAll(".deal__price");
-  const numberFormat = new Intl.NumberFormat("ru-RU");
+// const calculateAllSum = () => {
+//   const dealAllMoneyNew = document.getElementById("deal-all-money-new");
+//   const dealAllMoneyFailed = document.getElementById("deal-all-money-failed");
+//   const dealAllMoneyinWork = document.getElementById("deal-all-money-in-work");
+//   const dealAllMoneySuccess = document.getElementById("deal-all-money-success");
+//   const dealsPriceNew = document.querySelectorAll(".deals-new");
+//   const dealsPriceFailed = document.querySelectorAll(".deals-failed");
+//   const dealsPriceinWork = document.querySelectorAll(".deals-in-work");
+//   const dealsPriceSuccess = document.querySelectorAll(".deals-success");
+//   const kanbanAllMoney = document.querySelectorAll(".kanban__all-money");
+//   const dealPrice = document.querySelectorAll(".deal__price");
+//   const numberFormat = new Intl.NumberFormat("ru-RU");
 
-  const orderAmount = (delPrice) => {
-    let allSum = 0;
-    for (let i = 0; i < delPrice.length; i++) {
-      const dealChild = delPrice[i].children;
-      if (dealChild[0] != undefined) {
-        for (let l = 0; l < dealChild.length; l++) {
-          allSum += dealChild[l].children[0].children[1].children[0].innerText * 1;
-        }
-      } else {
-        allSum = 0;
-      }
-    }
-    return allSum;
-  };
+//   const orderAmount = (delPrice) => {
+//     let allSum = 0;
+//     for (let i = 0; i < delPrice.length; i++) {
+//       const dealChild = delPrice[i].children;
+//       if (dealChild[0] != undefined) {
+//         for (let l = 0; l < dealChild.length; l++) {
+//           allSum += dealChild[l].children[0].children[1].children[0].innerText * 1;
+//         }
+//       } else {
+//         allSum = 0;
+//       }
+//     }
+//     return allSum;
+//   };
 
-  dealAllMoneyNew.innerText = `${numberFormat.format(orderAmount(dealsPriceNew))}`;
-  dealAllMoneyFailed.innerText = `${numberFormat.format(orderAmount(dealsPriceFailed))}`;
-  dealAllMoneyinWork.innerText = `${numberFormat.format(orderAmount(dealsPriceinWork))}`;
-  dealAllMoneySuccess.innerText = `${numberFormat.format(orderAmount(dealsPriceSuccess))}`;
+//   dealAllMoneyNew.innerText = `${numberFormat.format(orderAmount(dealsPriceNew))}`;
+//   dealAllMoneyFailed.innerText = `${numberFormat.format(orderAmount(dealsPriceFailed))}`;
+//   dealAllMoneyinWork.innerText = `${numberFormat.format(orderAmount(dealsPriceinWork))}`;
+//   dealAllMoneySuccess.innerText = `${numberFormat.format(orderAmount(dealsPriceSuccess))}`;
 
-  dealPrice.forEach((item) => {
-    item.innerText = `${item.innerText * 1}`;
-  });
-  kanbanAllMoney.forEach((item) => {
-    const itemSpan = item.children[0];
-    if (itemSpan.innerText == 0) {
-      item.style.display = "none";
-    } else {
-      item.style.display = "block";
-    }
-  });
-};
-calculateAllSum();
+//   dealPrice.forEach((item) => {
+//     item.innerText = `${item.innerText * 1}`;
+//   });
+//   kanbanAllMoney.forEach((item) => {
+//     const itemSpan = item.children[0];
+//     if (itemSpan.innerText == 0) {
+//       item.style.display = "none";
+//     } else {
+//       item.style.display = "block";
+//     }
+//   });
+// };
+// calculateAllSum();
 
-const createDealNew = document.getElementById("create-deal-new");
-const createDealNewBtn = document.getElementById("create-deal-new-btn");
-createDealNewBtn.addEventListener("click", () => {
-  addActiveBtnDeal(createDealNewBtn, createDealNew);
-});
+// const createDealNew = document.getElementById("create-deal-new");
+// const createDealNewBtn = document.getElementById("create-deal-new-btn");
+// createDealNewBtn.addEventListener("click", () => {
+//   addActiveBtnDeal(createDealNewBtn, createDealNew);
+// });
 
-const createDealFailed = document.getElementById("create-deal-failed");
-const createDealFailedBtn = document.getElementById("create-deal-failed-btn");
+// const createDealFailed = document.getElementById("create-deal-failed");
+// const createDealFailedBtn = document.getElementById("create-deal-failed-btn");
 
-createDealFailedBtn.addEventListener("click", () => {
-  addActiveBtnDeal(createDealFailedBtn, createDealFailed);
-});
+// createDealFailedBtn.addEventListener("click", () => {
+//   addActiveBtnDeal(createDealFailedBtn, createDealFailed);
+// });
 
-// change currency
+// // change currency
 
-const changeCurrencyBtn = document.querySelectorAll(".create-deal__currency");
-const createDealSelectWrapper = document.querySelectorAll(".create-deal__select-wrapper");
-changeCurrencyBtn.forEach((item) => {
-  item.addEventListener("click", () => {
-    for (let i = 0; i < changeCurrencyBtn.length; i++) {
-      if (changeCurrencyBtn[i] === item) {
-        createDealSelectWrapper[i].classList.toggle("active");
-      }
-    }
-  });
-});
+// const changeCurrencyBtn = document.querySelectorAll(".create-deal__currency");
+// const createDealSelectWrapper = document.querySelectorAll(".create-deal__select-wrapper");
+// changeCurrencyBtn.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     for (let i = 0; i < changeCurrencyBtn.length; i++) {
+//       if (changeCurrencyBtn[i] === item) {
+//         createDealSelectWrapper[i].classList.toggle("active");
+//       }
+//     }
+//   });
+// });
 
-const createDealSelectItem = document.querySelectorAll(".create-deal__select-item");
-// const createDealCurrency = document.querySelectorAll(".create-deal__currency");
+// const createDealSelectItem = document.querySelectorAll(".create-deal__select-item");
+// // const createDealCurrency = document.querySelectorAll(".create-deal__currency");
 
-createDealSelectItem.forEach((item) => {
-  item.addEventListener("click", () => {
-    createDealSelectItem.forEach((e) => {
-      e.classList.remove("active");
-    });
-    changeCurrencyBtn.forEach((el) => {
-      el.innerText = `${item.innerText}`;
-      createDealSelectItem.forEach((currencyItem) => {
-        if (el.innerText == currencyItem.innerText) {
-          currencyItem.classList.add("active");
-        }
-      });
-    });
-  });
-});
+// createDealSelectItem.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     createDealSelectItem.forEach((e) => {
+//       e.classList.remove("active");
+//     });
+//     changeCurrencyBtn.forEach((el) => {
+//       el.innerText = `${item.innerText}`;
+//       createDealSelectItem.forEach((currencyItem) => {
+//         if (el.innerText == currencyItem.innerText) {
+//           currencyItem.classList.add("active");
+//         }
+//       });
+//     });
+//   });
+// });
 
-// DRAG & DROP deals
+// // DRAG & DROP deals
 
-const dragAndDrop = () => {
-  const deals = document.querySelectorAll(".deals__deal");
-  const kanbanDealsGrid = document.querySelectorAll(".kanban__deals");
-  const kanbanContent = document.querySelectorAll(".kanban__content");
-  let activeDeal;
+// const dragAndDrop = () => {
+//   const deals = document.querySelectorAll(".deals__deal");
+//   const kanbanDealsGrid = document.querySelectorAll(".kanban__deals");
+//   const kanbanContent = document.querySelectorAll(".kanban__content");
+//   let activeDeal;
 
-  const dragStart = function () {
-    activeDeal = this;
-    setTimeout(() => {
-      this.classList.add("hide");
-    }, 0);
-  };
-  const dragEnd = function () {
-    this.classList.remove("hide");
-    activeDeal = "";
-  };
-  const dragOver = function (e) {
-    e.preventDefault();
-    this.classList.add("drag-enter");
-  };
-  const dragEnter = function (e) {
-    e.preventDefault();
-    this.classList.add("drag-enter");
-  };
-  const dragLeave = function () {
-    this.classList.remove("drag-enter");
-  };
-  const dragDrop = function () {
-    this.append(activeDeal);
-    setTimeout(() => {
-      calculateAllSum();
-    }, 0);
-  };
-  const dragDropGridContent = function () {
-    this.classList.remove("drag-enter");
-  };
+//   const dragStart = function () {
+//     activeDeal = this;
+//     setTimeout(() => {
+//       this.classList.add("hide");
+//     }, 0);
+//   };
+//   const dragEnd = function () {
+//     this.classList.remove("hide");
+//     activeDeal = "";
+//   };
+//   const dragOver = function (e) {
+//     e.preventDefault();
+//     this.classList.add("drag-enter");
+//   };
+//   const dragEnter = function (e) {
+//     e.preventDefault();
+//     this.classList.add("drag-enter");
+//   };
+//   const dragLeave = function () {
+//     this.classList.remove("drag-enter");
+//   };
+//   const dragDrop = function () {
+//     this.append(activeDeal);
+//     setTimeout(() => {
+//       calculateAllSum();
+//     }, 0);
+//   };
+//   const dragDropGridContent = function () {
+//     this.classList.remove("drag-enter");
+//   };
 
-  kanbanContent.forEach((gridContent) => {
-    gridContent.addEventListener("dragover", dragOver);
-    gridContent.addEventListener("dragenter", dragEnter);
-    gridContent.addEventListener("dragleave", dragLeave);
-    gridContent.addEventListener("drop", dragDropGridContent);
-  });
-  kanbanDealsGrid.forEach((gridDeals) => {
-    gridDeals.addEventListener("drop", dragDrop);
-  });
+//   kanbanContent.forEach((gridContent) => {
+//     gridContent.addEventListener("dragover", dragOver);
+//     gridContent.addEventListener("dragenter", dragEnter);
+//     gridContent.addEventListener("dragleave", dragLeave);
+//     gridContent.addEventListener("drop", dragDropGridContent);
+//   });
+//   kanbanDealsGrid.forEach((gridDeals) => {
+//     gridDeals.addEventListener("drop", dragDrop);
+//   });
 
-  deals.forEach((deal) => {
-    deal.addEventListener("dragstart", dragStart);
-    deal.addEventListener("dragend", dragEnd);
-  });
-};
+//   deals.forEach((deal) => {
+//     deal.addEventListener("dragstart", dragStart);
+//     deal.addEventListener("dragend", dragEnd);
+//   });
+// };
 
-dragAndDrop();
+// dragAndDrop();
 
 // company card
 
-const openCompanyCard = () => {
-  const companyCardClose = document.querySelector(".company-card__close");
-  const clientCardClose = document.querySelector(".client-card__close");
-  const companyCard = document.querySelector(".company-card");
-  const clientCard = document.querySelector(".client-card");
-  const dealCompany = document.querySelectorAll(".deal__company");
-  const dealClient = document.querySelectorAll(".deal__client");
+const openModalCard = () => {
+  // const companyCardClose = document.querySelector(".company-card__close");
+  // const clientCardClose = document.querySelector(".client-card__close");
+  const createDealCardClose = document.querySelector(".create-deal-card__close");
+  // const companyCard = document.querySelector(".company-card");
+  // const clientCard = document.querySelector(".client-card");
+  const createDealCard = document.querySelector(".create-deal-card");
+  // const dealCompany = document.querySelectorAll(".deal__company");
+  // const dealClient = document.querySelectorAll(".deal__client");
+  const createDealPlus = document.querySelectorAll(".create-deal-plus");
+  const allWindowBg = document.querySelector(".all-window-bg");
 
   const addActiveCard = (cardLink, card) => {
     cardLink.addEventListener("click", () => {
       card.classList.add("active");
     });
   };
-
-  dealCompany.forEach((cardLink) => {
-    addActiveCard(cardLink, companyCard);
+  // dealCompany.forEach((cardLink) => {
+  //   addActiveCard(cardLink, companyCard);
+  // });
+  // dealClient.forEach((cardLink) => {
+  //   addActiveCard(cardLink, clientCard);
+  // });
+  createDealPlus.forEach((cardLink) => {
+    cardLink.addEventListener("click", () => {
+      createDealCard.classList.add("active");
+      allWindowBg.classList.add("active")
+    });
   });
-  dealClient.forEach((cardLink) => {
-    addActiveCard(cardLink, clientCard);
-  });
-  companyCardClose.addEventListener("click", () => {
-    companyCard.classList.remove("active");
-  });
-  clientCardClose.addEventListener("click", () => {
-    clientCard.classList.remove("active");
+  // companyCardClose.addEventListener("click", () => {
+  //   companyCard.classList.remove("active");
+  // });
+  // clientCardClose.addEventListener("click", () => {
+  //   clientCard.classList.remove("active");
+  // });
+  createDealCardClose.addEventListener("click", () => {
+    createDealCard.classList.remove("active");
   });
 };
-openCompanyCard();
+openModalCard();
 
 const openEditModal = () => {
-  const aboutEditBtn = document.getElementById("about-edit-btn");
-  const aboutEditBtnTwo = document.getElementById("edit-form__btn");
-  const aboutCancelBtn = document.getElementById("about-cancel-btn");
-  const aboutDeleteBtn = document.getElementById("about-delete-btn");
-  const aboutContent = document.querySelector(".about__content");
-  const aboutEditForm = document.querySelector(".about__edit-form");
+  const companyAboutEditBtns = document.querySelectorAll(".company-about-edit-btn");
+  const clientAboutEditBtns = document.querySelectorAll(".client-about-edit-btn");
+  const cancelCompanyEditFormBtn = document.getElementById("cancel-company-edit-form-btn");
+  const cancelClientEditFormBtn = document.getElementById("cancel-client-edit-form-btn");
+  const companyAboutCancelBtns = document.querySelectorAll(".company-about-cancel-btn");
+  const clientAboutCancelBtns = document.querySelectorAll(".client-about-cancel-btn");
+  const aboutDeleteBtns = document.querySelectorAll(".about-delete-btn");
+  const aboutContents = document.querySelectorAll(".about__content");
+  const companyAboutEditForm = document.querySelector("#company-edit-card");
+  const clientAboutEditForm = document.querySelector("#client-edit-card");
   const allWindowBg = document.querySelector(".all-window-bg");
-  const about = document.querySelector(".about");
+  const abouts = document.querySelectorAll(".about");
+  const cardBoxes = document.querySelectorAll(".card-box");
 
-  aboutEditBtn.addEventListener("click", () => {
-    aboutCancelBtn.classList.remove("no-active");
+  const removeClassActive = (items) => {
+    items.forEach((item) => {
+      item.classList.remove("active");
+    });
+  };
+  const removeClassNoActive = (items) => {
+    items.forEach((item) => {
+      item.classList.remove("no-active");
+    });
+  };
+  const addClassActive = (items) => {
+    items.forEach((item) => {
+      item.classList.add("active");
+    });
+  };
+  const addClassNoActive = (items) => {
+    items.forEach((item) => {
+      item.classList.add("no-active");
+    });
+  };
+
+  const clickEditBtn = (aboutEditBtn, aboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns) => {
     aboutEditBtn.classList.add("no-active");
-    aboutEditForm.classList.add("active");
-    aboutContent.classList.add("no-active");
+    removeClassNoActive(aboutCancelBtns);
+    addClassNoActive(aboutContents);
     allWindowBg.classList.add("active");
-    about.classList.add("active");
-    aboutDeleteBtn.classList.add("active");
-  });
-  aboutCancelBtn.addEventListener("click", () => {
-    aboutEditBtn.classList.remove("no-active");
+    addClassActive(abouts);
+    addClassActive(aboutDeleteBtns);
+  };
+  const clickCancelBtn = (aboutEditBtns, aboutCancelBtn, aboutContents, allWindowBg, abouts, aboutDeleteBtns) => {
+    removeClassNoActive(aboutEditBtns);
     aboutCancelBtn.classList.add("no-active");
-    aboutEditForm.classList.remove("active");
-    aboutContent.classList.remove("no-active");
+    removeClassNoActive(aboutContents);
     allWindowBg.classList.remove("active");
-    about.classList.remove("active");
-    aboutDeleteBtn.classList.remove("active");
+    removeClassActive(abouts);
+    removeClassActive(aboutDeleteBtns);
+  };
+  const clickEditBtnTwo = (aboutEditBtns, aboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns) => {
+    removeClassNoActive(aboutEditBtns);
+    addClassNoActive(aboutCancelBtns);
+    removeClassNoActive(aboutContents);
+    allWindowBg.classList.remove("active");
+    removeClassActive(abouts);
+    removeClassActive(aboutDeleteBtns);
+  };
+
+  companyAboutEditBtns.forEach((aboutEditBtn) => {
+    aboutEditBtn.addEventListener("click", () => {
+      companyAboutEditForm.classList.add("active");
+      clickEditBtn(aboutEditBtn, companyAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+      addClassActive(cardBoxes);
+    });
   });
-  aboutEditBtnTwo.addEventListener("click", (e) => {
+  clientAboutEditBtns.forEach((aboutEditBtn) => {
+    aboutEditBtn.addEventListener("click", () => {
+      clientAboutEditForm.classList.add("active");
+      clickEditBtn(aboutEditBtn, clientAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+      addClassActive(cardBoxes);
+    });
+  });
+  companyAboutCancelBtns.forEach((aboutCancelBtn) => {
+    aboutCancelBtn.addEventListener("click", () => {
+      companyAboutEditForm.classList.remove("active");
+      clickCancelBtn(companyAboutEditBtns, aboutCancelBtn, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+      removeClassActive(cardBoxes);
+    });
+  });
+  clientAboutCancelBtns.forEach((aboutCancelBtn) => {
+    aboutCancelBtn.addEventListener("click", () => {
+      clientAboutEditForm.classList.remove("active");
+      clickCancelBtn(clientAboutEditBtns, aboutCancelBtn, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+      removeClassActive(cardBoxes);
+    });
+  });
+
+  // cancelCompanyEditFormBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   clickEditBtnTwo(companyAboutEditBtns, companyAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+  //   companyAboutEditForm.classList.remove("active");
+  //   removeClassActive(cardBoxes);
+  // });
+  cancelClientEditFormBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    aboutEditBtn.classList.remove("no-active");
-    aboutCancelBtn.classList.add("no-active");
-    aboutEditForm.classList.remove("active");
-    aboutContent.classList.remove("no-active");
-    allWindowBg.classList.remove("active");
-    about.classList.remove("active");
-    aboutDeleteBtn.classList.remove("active");
+    clickEditBtnTwo(clientAboutEditBtns, clientAboutCancelBtns, aboutContents, allWindowBg, abouts, aboutDeleteBtns);
+    clientAboutEditForm.classList.remove("active");
+    removeClassActive(cardBoxes);
   });
 };
 openEditModal();

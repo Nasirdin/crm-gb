@@ -131,6 +131,21 @@ h6 {
   text-align: left;
 }
 
+.borderless-btn {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #99a2ad !important;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.borderless-btn.red-btn {
+  color: #ff0c0c !important;
+}
+
 @media (max-width: 900px) {
   .title {
     font-size: 24px;
@@ -1265,6 +1280,7 @@ h6 {
   border-radius: 8px;
   margin-bottom: 20px;
   border: 1px solid #dddcdc;
+  position: relative;
 }
 .company-card .about__header,
 .company-card .additionally__header,
@@ -1404,35 +1420,6 @@ h6 {
 .create-deal-card .additionally__img,
 .create-deal-card .history__img {
   margin-right: 10px;
-}
-.company-card .about__btn,
-.company-card .additionally__btn,
-.company-card .history__btn,
-.client-card .about__btn,
-.client-card .additionally__btn,
-.client-card .history__btn,
-.create-deal-card .about__btn,
-.create-deal-card .additionally__btn,
-.create-deal-card .history__btn {
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #99a2ad;
-  line-height: 20px;
-  cursor: pointer;
-}
-.company-card .about__btn_del,
-.company-card .additionally__btn_del,
-.company-card .history__btn_del,
-.client-card .about__btn_del,
-.client-card .additionally__btn_del,
-.client-card .history__btn_del,
-.create-deal-card .about__btn_del,
-.create-deal-card .additionally__btn_del,
-.create-deal-card .history__btn_del {
-  color: #ff0c0c;
 }
 .company-card .about__footer,
 .company-card .additionally__footer,
@@ -1666,6 +1653,33 @@ h6 {
   outline: none;
   background: none;
 }
+.company-card .edit-form__input-two::-webkit-input-placeholder, .client-card .edit-form__input-two::-webkit-input-placeholder, .create-deal-card .edit-form__input-two::-webkit-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::-moz-placeholder, .client-card .edit-form__input-two::-moz-placeholder, .create-deal-card .edit-form__input-two::-moz-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two:-ms-input-placeholder, .client-card .edit-form__input-two:-ms-input-placeholder, .create-deal-card .edit-form__input-two:-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::-ms-input-placeholder, .client-card .edit-form__input-two::-ms-input-placeholder, .create-deal-card .edit-form__input-two::-ms-input-placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
+.company-card .edit-form__input-two::placeholder,
+.client-card .edit-form__input-two::placeholder,
+.create-deal-card .edit-form__input-two::placeholder {
+  color: #99a2ad;
+  font-weight: 500;
+  font-size: 14px;
+}
 .company-card .edit-form__icon-one,
 .client-card .edit-form__icon-one,
 .create-deal-card .edit-form__icon-one {
@@ -1724,6 +1738,8 @@ h6 {
   outline: none;
   color: #99a2ad;
   font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
   cursor: pointer;
 }
 .company-card .edit-form__btn_yellow,
@@ -1798,6 +1814,7 @@ h6 {
   border-radius: 6px;
   left: -1px;
   top: 10px;
+  z-index: 1;
   content: "";
   position: absolute;
 }
@@ -1911,6 +1928,34 @@ h6 {
 .client-card .about-delete-btn.active,
 .create-deal-card .about-delete-btn.active {
   color: #ff0c0c;
+}
+
+.create-deal-card .about {
+  z-index: 1;
+}
+.create-deal-card .edit-form__btns {
+  width: 100% !important;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.responsible__img {
+  margin-right: 14px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+.responsible__img img {
+  width: 100%;
+  height: 100%;
+}
+.responsible__user {
+  color: #007bfb;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .create-deal-card .about__max-content {

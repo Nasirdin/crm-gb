@@ -14,7 +14,7 @@
         <div class="header">
           <ul class="header__nav nav">
             <li class="nav__item"><a href="../leads/index.html" class="nav__link">Лиды</a></li>
-            <li class="nav__item active"><a href="#" class="nav__link">Сделки</a></li>
+            <li class="nav__item active"><a href="#" class="nav__link">Сделки</a><span class="nav__create-plus create-deal-plus"></span></li>
             <li class="nav__item_more">
               <a href="#" class="nav__link nav__link_more">Товары и склады</a>
               <ul class="nav__second-items nav__second-items_one second-nav">
@@ -26,7 +26,7 @@
               <a href="#" class="nav__link nav__link_more">Клиенты</a>
               <ul class="nav__second-items nav__second-items_two second-nav">
                 <li class="second-nav__item"><a href="#" class="second-nav__link">Контакты</a></li>
-                <li class="second-nav__item"><a href="#" class="second-nav__link">Компании</a></li>
+                <li class="second-nav__item"><a href="../clients/companies/index.html" class="second-nav__link">Компании</a></li>
                 <li class="second-nav__item"><a href="#" class="second-nav__link">Контакт-центр</a></li>
               </ul>
             </li>
@@ -71,6 +71,292 @@
             <label><input class="second-header__search-input" type="text" placeholder="Поиск" /></label>
             <button class="second-header__search-btn"><img src="./src/icons//search.svg" alt="search-icon" /></button>
           </form>
+        </div>
+        <div class="all-window-bg"></div>
+
+        <div class="create-deal-card">
+          <div class="create-deal-card__content">
+            <span class="create-deal-card__close"></span>
+            <div class="create-deal-card__header">
+              <h2 class="create-deal-card__title">Сделки</h2>
+              <button class="create-deal-card__btn"><img src="./src/icons/editIcon.svg" alt="edit-icon" /></button>
+              <button class="create-deal-card__btn"><img src="./src/icons/urlIcon.svg" alt="url-icon" /></button>
+            </div>
+            <div class="create-deal-card__second-header">
+              <button class="create-deal-card__white-btn">Общие</button>
+            </div>
+            <div class="create-deal-card__block">
+              <div class="create-deal-card__box card-box">
+                <form>
+                  <div>
+                    <div class="create-deal-card__about about">
+                      <div class="about__header">
+                        <div class="about__title-block">
+                          <h3 class="about__title">О сделке</h3>
+                          <button class="create-deal-card__btn">
+                            <img src="./src/icons/editIcon.svg" alt="edit-icon" />
+                          </button>
+                        </div>
+                        <button class="about__btn create-deal-about-edit-btn borderless-btn no-active">Изменить</button>
+                        <button class="about__btn create-deal-about-cancel-btn borderless-btn">Отменить</button>
+                      </div>
+                      <div class="about__max-content">
+                        <div class="about__edit-form edit-form active" id="create-deal-edit-card">
+                          <label class="edit-form__input-title" for="">Название</label>
+                          <input class="edit-form__input" id="" type="text" placeholder="Сделка №" />
+                          <label class="edit-form__input-title" for="">Сумма и валюта</label>
+                          <div class="edit-form__box">
+                            <input class="edit-form__input" id="" type="text" value="0.00" />
+                            <div class="edit-select select">
+                              <p class="edit-select__text select__text active">Российский рубль</p>
+                              <div class="edit-select__wrapper select__wrapper">
+                                <ul class="edit-select__items select__items">
+                                  <li class="edit-select__item select__item active">Российский рубль</li>
+                                  <li class="edit-select__item select__item">Российский рубль</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="edit-form__input-title">Стадия</p>
+                          <div class="edit-select select">
+                            <p class="edit-select__text select__text">Не выбран</p>
+                            <div class="edit-select__wrapper select__wrapper">
+                              <ul class="edit-select__items select__items">
+                                <li class="edit-select__item select__item active">Не выбран</li>
+                                <li class="edit-select__item select__item">Не выбран</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <label class="edit-form__input-title" for="">Дата завершения</label>
+                          <input
+                            class="edit-form__input edit-form__input_date"
+                            id=""
+                            type="date"
+                            value="2022-03-21"
+                            min="1900-01-01"
+                            max="2004.01.01"
+                          />
+                          <label class="edit-form__input-title" for="">Контакты</label>
+                          <div class="edit-form__input edit-form__box">
+                            <div class="edit-form__box-div">
+                              <img class="edit-form__icon-one" src="./src/icons/user-icon.svg" alt="icon" />
+                              <input
+                                class="edit-form__input-two"
+                                id=""
+                                type="text"
+                                placeholder="Имя, телефон или E-mail"
+                              />
+                            </div>
+                            <img class="edit-form__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                          </div>
+                          <button class="edit-form__add-phone add-btn">
+                            <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить участников
+                          </button>
+                          <label class="edit-form__input-title" for="">Компания</label>
+                          <div class="edit-form__input edit-form__box">
+                            <div class="edit-form__box-div">
+                              <img class="edit-form__icon-one" src="./src/icons/users-icon.svg" alt="icon" />
+                              <input
+                                class="edit-form__input-two"
+                                id=""
+                                type="text"
+                                placeholder="Название, телефон или E-mail"
+                              />
+                            </div>
+                            <img class="edit-form__icon" id="deal-client-btn" src="./src/icons/search.svg" alt="icon" />
+                          </div>
+                          <button class="edit-form__add-phone add-btn">
+                            <img src="./src/icons/grey-plus.svg" alt="plus-icon" />Добавить
+                          </button>
+                        </div>
+
+                        <!-- <div class="about__content">
+                          <p class="about__grey-text">Название</p>
+                          <p class="about__text about__deal-name">Принтеры</p>
+                          <p class="about__grey-text">Сумма</p>
+                          <p class="about__text about__sum-and-currency">
+                            <span class="about__sum">150000</span><span class="about__currency">₽</span>
+                          </p>
+                          <p class="about__grey-text">Стадия</p>
+                          <p class="about__text about__stage">Новая</p>
+                          <p class="about__grey-text">Дата завершения</p>
+                          <p class="about__text about__completion" href="#">21.03.2022</p>
+                          <p class="about__grey-text">Контакты</p>
+                          <a class="about__text about__completion" href="#">ывкпыв@srfs.ru</a>
+                          <p class="about__grey-text">Компания</p>
+                          <a class="about__text about__completion" href="#">ВТК МСК</a>
+                        </div> -->
+                        <div class="about__footer">
+                          <button
+                            class="about__btn create-deal-about-delete-btn borderless-btn red-btn"
+                            style="margin-top: -8px"
+                          >
+                            Удалить раздел
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="create-deal-card__about about">
+                      <div class="about__header">
+                        <div class="about__title-block">
+                          <h3 class="about__title">Дополнительно</h3>
+                          <button class="create-deal-card__btn">
+                            <img src="./src/icons/editIcon.svg" alt="edit-icon" />
+                          </button>
+                        </div>
+                        <button class="about__btn create-deal-about-edit-btn borderless-btn">Изменить</button>
+                        <button class="about__btn create-deal-about-cancel-btn borderless-btn no-active">
+                          Отменить
+                        </button>
+                      </div>
+                      <div class="about__max-content">
+                        <div class="about__edit-form edit-form active" id="create-deal-edit-card">
+                          <p class="edit-form__input-title">Тип сделки</p>
+                          <div class="edit-select select">
+                            <p class="edit-select__text select__text">Продажа</p>
+                            <div class="edit-select__wrapper select__wrapper">
+                              <ul class="edit-select__items select__items">
+                                <li class="edit-select__item select__item active">Продажа</li>
+                                <li class="edit-select__item select__item">Не выбран</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <label class="edit-form__input-title" for="">Дата начала</label>
+                          <input
+                            class="edit-form__input edit-form__input_date"
+                            id=""
+                            type="date"
+                            value="2022-03-21"
+                            min="1900-01-01"
+                            max="2004.01.01"
+                          />
+
+                          <p class="edit-form__input-title">Ответственный</p>
+                          <div class="edit-form__input edit-form__box">
+                            <div class="edit-form__box-div responsible">
+                              <picture class="responsible__img">
+                                <source srcset="./src/img/users/user-1.webp" type="image/webp" />
+                                <img src="./src/img/users/user-1.jpg" alt="client-img" />
+                              </picture>
+                              <p class="responsible__user">Роман Гудков</p>
+                            </div>
+                            <button class="borderless-btn">Сменить</button>
+                          </div>
+                        </div>
+                        <!-- <div class="about__content">
+                          <p class="about__grey-text">Тип сделки</p>
+                          <p class="about__text about__type">Продажа</p>
+                          <p class="about__grey-text">Дата начала</p>
+                          <p class="about__text about__start-date">21.03.2022</p>
+                          <p class="about__grey-text">Ответственный</p>
+                          <p class="about__link about__responsible">
+                            <picture class="about__img">
+                              <source srcset="./src/img/users/user-1.webp" type="image/webp" />
+                              <img src="./src/img/users/user-1.jpg" alt="client-img" />
+                            </picture>
+                            Роман Гудков
+                          </p>
+                        </div> -->
+                        <div class="about__footer">
+                          <button class="about__btn create-deal-about-delete-btn borderless-btn red-btn">
+                            Удалить раздел
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="create-deal-card__about about">
+                      <div class="about__header">
+                        <div class="about__title-block">
+                          <h3 class="about__title">Товары</h3>
+                          <button class="create-deal-card__btn">
+                            <img src="./src/icons/editIcon.svg" alt="edit-icon" />
+                          </button>
+                        </div>
+                        <button class="about__btn create-deal-about-edit-btn borderless-btn">Изменить</button>
+                        <button class="about__btn create-deal-about-cancel-btn borderless-btn no-active">
+                          Отменить
+                        </button>
+                      </div>
+                      <div class="about__max-content">
+                        <form class="about__edit-form edit-form active" id="create-deal-edit-card">
+                          <p class="edit-form__input-title">Товары</p>
+                          <div class="edit-form__input edit-form__box">
+                            <button>+ добавить</button>
+                          </div>
+                        </form>
+                        <div class="about__footer">
+                          <button class="about__btn create-deal-about-delete-btn borderless-btn red-btn">
+                            Удалить раздел
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="create-deal-card__about about">
+                      <div class="about__header">
+                        <div class="about__title-block">
+                          <h3 class="about__title">Регулярная сделка</h3>
+                          <button class="create-deal-card__btn">
+                            <img src="./src/icons/editIcon.svg" alt="edit-icon" />
+                          </button>
+                        </div>
+                        <button class="about__btn create-deal-about-edit-btn borderless-btn">Изменить</button>
+                        <button class="about__btn create-deal-about-cancel-btn borderless-btn no-active">
+                          Отменить
+                        </button>
+                      </div>
+                      <div class="about__max-content" style="margin-bottom: 35px;">
+                        <p class="edit-form__input-title">Повторяемость</p>
+                        <div class="edit-select select" style="margin-bottom: 15px">
+                          <p class="edit-select__text select__text">Не повторять</p>
+                          <div class="edit-select__wrapper select__wrapper">
+                            <ul class="edit-select__items select__items">
+                              <li class="edit-select__item select__item active">Не повторять</li>
+                              <li class="edit-select__item select__item">Не повторять</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="about__footer">
+                          <button class="about__btn create-deal-about-delete-btn borderless-btn red-btn">
+                            Удалить раздел
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="edit-form__btns">
+                      <button class="edit-form__btn" id="cancel-client-edit-form-btn">Отменить</button>
+                      <button class="edit-form__btn edit-form__btn_yellow">Сохранить</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="create-deal-card__box card-box">
+                <div class="create-deal-card__history history">
+                  <h3 class="history__title">История</h3>
+                  <span class="history__date">4 ноября</span>
+                  <ul class="history__items">
+                    <li class="history__item">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Предложение <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">Сделка <a class="history__link" href="#">картриджи</a></p>
+                    </li>
+                    <li class="history__item">
+                      <div class="history__icon-block"></div>
+                      <img class="history__img-icon" src="./src/icons/user-icon-2.svg" alt="user-icon" />
+                      <p class="history__info-text">Добавлена связь<span class="history__info-date">12:14</span></p>
+                      <p class="history__text">ВТК МСК</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
